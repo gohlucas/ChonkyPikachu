@@ -1,11 +1,7 @@
 // "use client";
 import React, { useState } from "react";
 import DropDown from "../components/DropDown";
-
-interface Option {
-  label: string;
-  value: string;
-}
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -17,6 +13,8 @@ const page = () => {
       <DropDown />
       <h3>Choose the nearest room to your desired end point</h3>
       <DropDown />
+      <br></br>
+      <Link href="/">Back</Link>
     </div>
   );
 };

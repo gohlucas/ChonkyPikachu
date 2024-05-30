@@ -2,7 +2,6 @@
 import { useState, ChangeEvent } from "react";
 
 const Dropdown = () => {
-  const [textBoxValue, setTextBoxValue] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleDropdownChange = (event: ChangeEvent<HTMLSelectElement>) => {
