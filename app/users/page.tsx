@@ -1,19 +1,16 @@
-// "use client";
+"use client";
 import React, { useState } from "react";
-import DropDown from "../components/DropDown";
 import Link from "next/link";
+import BuildingsList from "../components/BuildingsList";
+import RoomsList from "../components/RoomsList";
+import StartEndForm from "../components/StartEndForm"
 
 const page = () => {
   return (
-    <div>
+    <div style={{ color: 'black'}}>
       <h1>ChonkyPikachu</h1>
-      <h3>Which building are you currently in?</h3>
-      <DropDown />
-      <h3>Choose the nearest room to your desired start point</h3>
-      <DropDown />
-      <h3>Choose the nearest room to your desired end point</h3>
-      <DropDown />
       <br></br>
+      <StartEndForm />
       <Link href="/">Back</Link>
     </div>
   );
