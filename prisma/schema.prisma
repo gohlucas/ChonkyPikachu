@@ -8,28 +8,29 @@ datasource db {
 }
 
 model Buildings {
-  BuildingID   Int     @id(map: "PK__Building__5463CDE4ED374DB5") @default(autoincrement())
+  BuildingID   Int     @id(map: "PK__Building__5463CDE4D303887E") @default(autoincrement())
   BuildingName String  @db.VarChar(100)
   Paths        Paths[]
   Rooms        Rooms[]
 }
 
 model Paths {
-  PathID                        Int       @id(map: "PK__Paths__CD67DC39F8AE7EF1") @default(autoincrement())
+  PathID                        Int       @id(map: "PK__Paths__CD67DC39BC551F53") @default(autoincrement())
   BuildingID                    Int
   FromRoomID                    Int
   ToRoomID                      Int
   PathDescription               String?   @db.Text
-  Buildings                     Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Paths__BuildingI__6477ECF3")
-  Rooms_Paths_FromRoomIDToRooms Rooms     @relation("Paths_FromRoomIDToRooms", fields: [FromRoomID], references: [RoomID], onUpdate: NoAction, map: "FK__Paths__FromRoomI__656C112C")
-  Rooms_Paths_ToRoomIDToRooms   Rooms     @relation("Paths_ToRoomIDToRooms", fields: [ToRoomID], references: [RoomID], onUpdate: NoAction, map: "FK__Paths__ToRoomID__66603565")
+  Buildings                     Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Paths__BuildingI__787EE5A0")
+  Rooms_Paths_FromRoomIDToRooms Rooms     @relation("Paths_FromRoomIDToRooms", fields: [FromRoomID], references: [RoomID], onUpdate: NoAction, map: "FK__Paths__FromRoomI__797309D9")
+  Rooms_Paths_ToRoomIDToRooms   Rooms     @relation("Paths_ToRoomIDToRooms", fields: [ToRoomID], references: [RoomID], onUpdate: NoAction, map: "FK__Paths__ToRoomID__7A672E12")
 }
 
 model Rooms {
   BuildingID                    Int
-  RoomID                        Int       @id(map: "PK__Rooms__32863919367C9F3C") @default(autoincrement())
+  Floor                         String    @db.NVarChar(255)
+  RoomID                        Int       @id(map: "PK__Rooms__32863919F2E0408C") @default(autoincrement())
   RoomName                      String    @db.VarChar(100)
   Paths_Paths_FromRoomIDToRooms Paths[]   @relation("Paths_FromRoomIDToRooms")
   Paths_Paths_ToRoomIDToRooms   Paths[]   @relation("Paths_ToRoomIDToRooms")
-  Buildings                     Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Rooms__BuildingI__619B8048")
+  Buildings                     Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Rooms__BuildingI__75A278F5")
 }
