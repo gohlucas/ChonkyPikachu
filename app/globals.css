@@ -16,6 +16,20 @@
   }
 }
 
+
+
+main {
+  color: black;
+  text-align: center;
+}
+
+.centered-image {
+  margin-left: auto;
+  margin-right: auto;
+  height: 560px;
+  width: 1000px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   padding: 1rem;
