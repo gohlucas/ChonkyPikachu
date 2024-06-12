@@ -8,7 +8,7 @@ type Room = {
   RoomName: string;
 };
 
-const StartEndForm: React.FC = () => {
+const StartEndForm: React.FC = () => { //State management
   const [rooms, setRooms] = useState<Room[]>([]);
   const [startRoom, setStartRoom] = useState<string>("");
   const [endRoom, setEndRoom] = useState<string>("");
