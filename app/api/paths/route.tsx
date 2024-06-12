@@ -1,17 +1,15 @@
-//Main purpose: Get from and to room and return the matching file in database
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
 export async function GET(req: NextRequest) {
-  console.log("made it to GET");
-  const { searchParams } = new URL(req.url); //Creates a URL object from request URL
-  const startRoomId = searchParams.get("startRoomId"); //Extract query parameters from URL 
-  const endRoomId = searchParams.get("endRoomId"); //Extract query parameters from URL 
+  console.log("made it to GET"); //State settings
+  const { searchParams } = new URL(req.url);
+  const startRoomId = searchParams.get("startRoomId");
+  const endRoomId = searchParams.get("endRoomId");
 
-  //Check if start and end room is missing 
-  if (!startRoomId || !endRoomId) {
+  if (!startRoomId || !endRoomId) { //Error handling
     return NextResponse.json(
       { error: "Missing startRoomId or endRoomId" },
       { status: 400 }
@@ -19,23 +17,50 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    // Queries the paths table for teh first record matching the FromRoomId and ToRoomID criteria
-    const path = await prisma.paths.findFirst({
+    console.log(`Fetching paths from ${startRoomId} to ${endRoomId}`);
+    
+    const paths = await prisma.paths.findMany({
       where: {
-        FromRoomID: parseInt(startRoomId), //Asssigning what user input to the varibales 
+        FromRoomID: parseInt(startRoomId),
         ToRoomID: parseInt(endRoomId),
+      },
+      orderBy: {
+        PathID: 'asc',
       },
     });
 
-    if (path) {
-      return NextResponse.json(path); //Path found, return as JSON response
+    console.log(`Paths found: ${paths.length}`);
+    
+    const pathIds = paths.map(path => path.PathID);
+
+    const images = await prisma.pathImages.findMany({ //Find images
+      where: {
+        PathID: {
+          in: pathIds,
+        },
+      },
+    });
+
+    console.log(`Images found: ${images.length}`);
+
+    if (paths.length > 0) {
+      const response = paths.map(path => {
+        const image = images.filter(img => img.PathID === path.PathID).map(img => img.ImageURL);
+        return {
+          PathID: path.PathID,
+          instruction: path.PathDescription,
+          images: image,
+        };
+      });
+
+      return NextResponse.json(response);
     } else {
-      return NextResponse.json({ message: "No paths found" }, { status: 404 }); //No path found
+      return NextResponse.json({ message: "No paths found" }, { status: 404 });
     }
-  } catch (error) { //Error handling 
-    console.error("Error querying paths:", error);
+  } catch (error) {
+    console.error("Error querying paths and images:", error); //Error handling
     return NextResponse.json(
-      { error: "Error querying paths" },
+      { error: "Error querying paths and images" },
       { status: 500 }
     );
   }

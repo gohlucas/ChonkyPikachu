@@ -8,12 +8,18 @@ type Room = {
   RoomName: string;
 };
 
-const StartEndForm: React.FC = () => { //State management
+type PathDetail = {
+  PathID: number;
+  instruction: string | null;
+  images: string[];
+};
+
+const StartEndForm: React.FC = () => {
   const [rooms, setRooms] = useState<Room[]>([]);
   const [startRoom, setStartRoom] = useState<string>("");
   const [endRoom, setEndRoom] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [msg, setMsg] = useState<string>("");
+  const [pathDetails, setPathDetails] = useState<PathDetail[]>([]);
 
   useEffect(() => {
     const fetchRooms = async () => {
@@ -41,21 +47,21 @@ const StartEndForm: React.FC = () => { //State management
       return;
     }
 
-    if (startRoom != "1") {
+    if (startRoom !== "1") {
       setMessage("Please choose Discussion Room 1 as Start Room for testing");
       return;
     }
 
     try {
-      const response = await axios.get("/api/paths", {
+      const response = await axios.get<PathDetail[]>("/api/paths", {
         params: {
           startRoomId: startRoom,
           endRoomId: endRoom,
         },
       });
+      console.log(response.data); // Log the response to verify images are included
       setMessage("Rooms selected successfully!");
-      console.log(response.data);
-      setMsg(response.data.PathDescription);
+      setPathDetails(response.data);
     } catch (error) {
       console.error("Error submitting rooms:", error);
       setMessage("Error submitting rooms");
@@ -68,16 +74,10 @@ const StartEndForm: React.FC = () => { //State management
       <form onSubmit={handleSubmit}>
         <label>
           Start Room:
-          <select
-            value={startRoom}
-            onChange={(e) => setStartRoom(e.target.value)}
-          >
+          <select value={startRoom} onChange={(e) => setStartRoom(e.target.value)}>
             <option value="">Select...</option>
             {rooms.map((room) => (
-              <option
-                key={`start-${room.BuildingID}-${room.RoomID}`}
-                value={room.RoomID || "-1"}
-              >
+              <option key={`start-${room.BuildingID}-${room.RoomID}`} value={room.RoomID || "-1"}>
                 {room.RoomName}
               </option>
             ))}
@@ -89,10 +89,7 @@ const StartEndForm: React.FC = () => { //State management
           <select value={endRoom} onChange={(e) => setEndRoom(e.target.value)}>
             <option value="">Select...</option>
             {rooms.map((room) => (
-              <option
-                key={`end-${room.BuildingID}-${room.RoomID}`}
-                value={room.RoomID || "-1"}
-              >
+              <option key={`end-${room.BuildingID}-${room.RoomID}`} value={room.RoomID || "-1"}>
                 {room.RoomName}
               </option>
             ))}
@@ -102,7 +99,23 @@ const StartEndForm: React.FC = () => { //State management
         <button type="submit">Submit</button>
       </form>
       {message && <p>{message}</p>}
-      {msg && <p>{msg}</p>}
+      {pathDetails.length > 0 && (
+        <div>
+          {pathDetails.map((detail) => (
+            <div key={detail.PathID}>
+              <h2>Step {detail.PathID}</h2>
+              <p>{detail.instruction}</p>
+              {detail.images.length > 0 && (
+                <div>
+                  {detail.images.map((url, index) => (
+                    <img key={index} src={url} alt={`Step ${detail.PathID} Image ${index + 1}`} />
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
