@@ -42,3 +42,11 @@ model PathImages {
   ImageURL String? @db.VarChar(255)
   Paths    Paths?  @relation(fields: [PathID], references: [PathID], onDelete: NoAction, onUpdate: NoAction, map: "FK__PathImage__PathI__05D8E0BE")
 }
+
+model Nodes {
+  PathID          Int     @id(map: "PK__Nodes__CD67DC39C215F31E") @default(autoincrement())
+  FromNodeID      String? @db.VarChar(255)
+  ToNodeID        String? @db.VarChar(255)
+  PathDescription String? @db.Text
+  Image           Bytes?
+}
