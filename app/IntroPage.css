@@ -2,12 +2,19 @@
 
 /* Setting a background image for the entire webpage */
 body {
-  background-image: url('./IntroPikachu.gif');
-  background-size: cover;
+  background-image: url('./IntroPage.png');
+  background-position: center;
   background-repeat: no-repeat;
-  margin: 0;
+  background-size: cover;
   font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }
+
 
 /* Styling the header */
 header {
@@ -15,6 +22,7 @@ header {
   padding: 0px;
   text-align: center;
 }
+
 
 
 /* Navigation bar styling */
@@ -39,21 +47,26 @@ nav a:hover {
 
 /* Basic Button Styling */
 .button {
-  background-color: #ff0000; /* Green background */
-  border: none; /* Remove default border */
-  color: rgb(0, 0, 0); /* White text */
-  padding: 15px 32px; /* Padding inside the button */
+  background-image: url('./PreButton.png'); /* Default GIF */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+  color: transparent; /* Make text invisible */
+  padding: 0; /* Padding inside the button */
   text-align: center; /* Center the text */
   text-decoration: none; /* Remove underline from text */
-  display: inline-block; /* Inline-block display */
-  font-size: 16px; /* Font size */
-  margin: 4px 2px; /* Margin around the button */
+  border:none;
+  width: 500px;
+  height: 300px;
+  margin: 0; /* Margin around the button */
+  outline: none;
   cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 8px; /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth background color transition */
+  border-radius: 1px; /* Rounded corners */
+  transition: background-image 0.3s; /* Smooth background image transition */
 }
 
 /* Button Hover Effect */
 .button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-image: url('./PostButton.png'); /* Hover GIF */
 }

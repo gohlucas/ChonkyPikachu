@@ -6,13 +6,14 @@ const Home: React.FC = () => {
     return (
         <main>
             <header>
-            <h1>Cannot find the room you are looking for? Use conveNUS!</h1>
-            </header>
+            <h1>Welcome to conveNUS! Click the Pokeball below to start your navigation!</h1>
             <div style={{ fontSize: '30px' }}>
         <Link href="/users">
-          <button className="button">Click Here</button>
+          <button className="button"></button>
         </Link>
       </div>
+            </header>
+            
         </main>
     );
 }
