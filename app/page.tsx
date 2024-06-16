@@ -1,23 +1,20 @@
-import Link from "next/link";
-import "./globals.css";
+import React from 'react';
+import Link from 'next/link';
+import './IntroPage.css';
 
-export default function Home() {
-  return (
-    <main>
-      <h1>
-        Welcome to ConveNUS, a web app to find your way around NUS. Pika...
-        Pika... Pika...chuuuu!
-      </h1>
-      <h2>Styling and Beautification in progress...</h2>
-      <img
-        src="https://i.gifer.com/XX0b.gif"
-        // src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/88c4706a-565c-4f0a-acfc-b914df984541/dcbxe9t-25e1fa87-9e5d-49bd-b085-c0c7075d12d5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg4YzQ3MDZhLTU2NWMtNGYwYS1hY2ZjLWI5MTRkZjk4NDU0MVwvZGNieGU5dC0yNWUxZmE4Ny05ZTVkLTQ5YmQtYjA4NS1jMGM3MDc1ZDEyZDUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.qfko0yYu_E3cH4TuO0GNA3d8MM0l_fNleb_3P84vqus"
-        alt="Image not Loading"
-        className="centered-image"
-      ></img>
-      <div style={{ fontSize: "30px" }}>
-        <Link href="/users">Click Here</Link>
+const Home: React.FC = () => {
+    return (
+        <main>
+            <header>
+            <h1>Cannot find the room you are looking for? Use conveNUS!</h1>
+            </header>
+            <div style={{ fontSize: '30px' }}>
+        <Link href="/users">
+          <button className="button">Click Here</button>
+        </Link>
       </div>
-    </main>
-  );
+        </main>
+    );
 }
+
+export default Home;

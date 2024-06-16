@@ -1,0 +1,59 @@
+/* IntroPage.css */
+
+/* Setting a background image for the entire webpage */
+body {
+  background-image: url('./IntroPikachu.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling the header */
+header {
+  color: black;
+  padding: 0px;
+  text-align: center;
+}
+
+
+/* Navigation bar styling */
+nav {
+  background-color: #444;
+  overflow: hidden;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Basic Button Styling */
+.button {
+  background-color: #ff0000; /* Green background */
+  border: none; /* Remove default border */
+  color: rgb(0, 0, 0); /* White text */
+  padding: 15px 32px; /* Padding inside the button */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline from text */
+  display: inline-block; /* Inline-block display */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin around the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Button Hover Effect */
+.button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
