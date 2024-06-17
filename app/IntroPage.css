@@ -2,7 +2,7 @@
 
 /* Setting a background image for the entire webpage */
 body {
-  background-image: url('./IntroPage.png');
+  background-image: url('./WebPage\ Introduction.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,8 +57,8 @@ nav a:hover {
   text-align: center; /* Center the text */
   text-decoration: none; /* Remove underline from text */
   border:none;
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   margin: 0; /* Margin around the button */
   outline: none;
   cursor: pointer; /* Pointer cursor on hover */
