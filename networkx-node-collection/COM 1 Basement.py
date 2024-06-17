@@ -80,7 +80,7 @@ print("successful commit")
 #     json.dump(graph_data, f, indent=4)
 
 # #C1
-# G.add_edge("B-01", "C1", path="turn right", image=NotDoneYet)
+# G.add_edge("B-01", "C1", path="B-01")
 # G.add_edge("B-02", "C1")
 # G.add_edge("B-03", "C1")
 # G.add_edge("B-04", "C1")
@@ -122,7 +122,7 @@ print("successful commit")
 # #C6
 # G.add_edge("B-11", "C6")
 # G.add_edge("B-12", "C6")
-# G.add_edge("B-13", "C6")
+# G.add_edge("B-13", "C6", path="B-13 to C6")
 # #Reverse C6
 # G.add_edge("C6", "B-11")
 # G.add_edge("C6", "B-12")
@@ -131,7 +131,7 @@ print("successful commit")
 # G.add_edge("B-14A", "C7")
 # G.add_edge("B-14B", "C7")
 # #Reverse C7
-# G.add_edge("C7", "B-14A")
+# G.add_edge("C7", "B-14A", path = "C7 to B-14A")
 # G.add_edge("C7", "B-14B")
 # #Corridor Link
 # G.add_edge("C1", "C3")
@@ -139,7 +139,7 @@ print("successful commit")
 # G.add_edge("C1", "C4")
 # G.add_edge("C1", "C6")
 # G.add_edge("C4", "C5")
-# G.add_edge("C6", "C7")
+# G.add_edge("C6", "C7", path = "C6 to C7")
 # #Reverse Corridor Link
 # G.add_edge("C3", "C1")
 # G.add_edge("C2", "C3")

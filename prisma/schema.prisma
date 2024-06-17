@@ -48,5 +48,5 @@ model Nodes {
   FromNodeID      String? @db.VarChar(255)
   ToNodeID        String? @db.VarChar(255)
   PathDescription String? @db.Text
-  Image           Bytes?
+  Image           String? @db.Text
 }
