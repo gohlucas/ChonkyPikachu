@@ -1,13 +1,15 @@
-/* mainpage.css */
 .page-container {
   color: black;
   padding: 20px;
-  background-image: url('./Main_page.png'); 
-  background-size: cover; /* Ensures the image covers the entire container */
-  background-position: center; /* Centers the image */
+  background-image: url('./MainPage.png'); 
+  background-size: cover;
+  background-position: center;
   height: 100vh;
   width: 100%;
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-title {
@@ -16,22 +18,28 @@
   margin-bottom: 20px;
 }
 
-.page-link {
-  display:inline-block;
-  width: 200px; /* Adjust to the size of your image */
-  height: 200px; /* Adjust to the size of your image */
-  background-image: url('./PreBackButton.png');
-  background-size: 160%; /* Ensures the image covers the entire element */
-  background-position: center; /* Centers the image */
-  background-color: transparent;
-  background-repeat: repeat;
-}
-
-.page-link:hover {
-  background-image: url('./PostBackButton.png');
-  background-repeat: repeat;
+.page-subtitle {
+  font-size: 24px; /* Add this line for subtitle styling */
+  margin-bottom: 20px;
 }
 
 .page-form {
   margin-bottom: 20px;
+}
+
+.page-link {
+  display: inline-block;
+  width: 200px; 
+  height: 200px; 
+  background-image: url('./PreBackButton.png');
+  background-size: 160%;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  margin-top: 10%;
+}
+
+.page-link:hover {
+  background-image: url('./PostBackButton.png');
+  background-repeat: no-repeat;
 }
