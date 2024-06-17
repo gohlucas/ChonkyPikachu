@@ -1,8 +1,14 @@
 from flask import Flask, request, jsonify
 import networkx as nx
-import matplotlib.pyplot as plt
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+enabled_origins = {
+    "http://localhost:3000"
+    "https://chonky-pikachu.netlify.app/"
+}
+CORS(app, origins=enabled_origins)
 
 G = nx.DiGraph()
 
