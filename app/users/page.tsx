@@ -5,11 +5,12 @@ import StartEndForm from "../components/StartEndForm";
 
 const Page = () => {
   return (
-    <div style={{ color: "black" }}>
-      <h1>ChonkyPikachu</h1>
-      <br></br>
-      <StartEndForm />
-      <Link href="/">Back</Link>
+    <div className="page-container">
+      <h1 className="page-title">ChonkyPikachu</h1>
+      <div className="page-form">
+        <StartEndForm />
+      </div>
+      <Link href="/" className="page-link">Back</Link>
     </div>
   );
 };

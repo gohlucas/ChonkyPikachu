@@ -1,31 +1,37 @@
 /* mainpage.css */
 .page-container {
-    color: black;
-    padding: 20px;
-    background-image: url('./Main_page.png'); 
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
-    height: 100vh;
-    width: 100%;
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+  color: black;
+  padding: 20px;
+  background-image: url('./Main_page.png'); 
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+}
 
-  }
-  
-  .page-title {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .page-link {
-    color: blue;
-    text-decoration: none;
-  }
-  
-  .page-link:hover {
-    text-decoration: underline;
-  }
-  
-  .page-form {
-    margin-bottom: 20px;
-  }
+.page-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.page-link {
+  display:inline-block;
+  width: 200px; /* Adjust to the size of your image */
+  height: 200px; /* Adjust to the size of your image */
+  background-image: url('./PreBackButton.png');
+  background-size: 160%; /* Ensures the image covers the entire element */
+  background-position: center; /* Centers the image */
+  background-color: transparent;
+  background-repeat: repeat;
+}
+
+.page-link:hover {
+  background-image: url('./PostBackButton.png');
+  background-repeat: repeat;
+}
+
+.page-form {
+  margin-bottom: 20px;
+}

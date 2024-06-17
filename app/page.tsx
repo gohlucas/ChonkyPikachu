@@ -6,7 +6,6 @@ const Home: React.FC = () => {
     return (
         <main>
             <header>
-            <h1>Welcome to conveNUS! Click the Pokeball below to start your navigation!</h1>
             <div style={{ fontSize: '30px' }}>
         <Link href="/users">
           <button className="button"></button>
