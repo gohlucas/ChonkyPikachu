@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import BuildingsList from "../components/BuildingsList";
-import RoomsList from "../components/RoomsList";
 import StartEndForm from "../components/StartEndForm";
 
 const Page = () => {

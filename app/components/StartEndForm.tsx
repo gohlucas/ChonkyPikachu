@@ -6,6 +6,7 @@ type Room = {
   BuildingID: number;
   RoomID: number;
   RoomName: string;
+  RoomNumber: string;
 };
 
 type PathDetail = {
@@ -98,7 +99,7 @@ const StartEndForm: React.FC = () => {
             {rooms.map((room) => (
               <option
                 key={`start-${room.BuildingID}-${room.RoomID}`}
-                value={room.RoomID || "-1"}
+                value={room.RoomNumber}
               >
                 {room.RoomName}
               </option>
@@ -113,7 +114,7 @@ const StartEndForm: React.FC = () => {
             {rooms.map((room) => (
               <option
                 key={`end-${room.BuildingID}-${room.RoomID}`}
-                value={room.RoomID || "-1"}
+                value={room.RoomNumber}
               >
                 {room.RoomName}
               </option>

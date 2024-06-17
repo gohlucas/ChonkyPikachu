@@ -31,28 +31,28 @@ G.add_node("C6") #As depicted in Diagram
 G.add_node("C7") #As depicted in Diagram
 
 #C1
-G.add_edge("B-01", "C1", path="B-01")
-G.add_edge("B-02", "C1")
-G.add_edge("B-03", "C1")
-G.add_edge("B-04", "C1")
-G.add_edge("B-05", "C1")
-G.add_edge("B-08", "C1") 
+G.add_edge("B-01", "C1", path="1")
+G.add_edge("B-02", "C1", path="2")
+G.add_edge("B-03", "C1", path="3")
+G.add_edge("B-04", "C1", path="4")
+G.add_edge("B-05", "C1", path="5")
+G.add_edge("B-08", "C1", path="6") 
 #Reverse C1
-G.add_edge("C1", "B-01")
-G.add_edge("C1", "B-02")
-G.add_edge("C1", "B-03")
-G.add_edge("C1", "B-04")
-G.add_edge("C1", "B-05")
-G.add_edge("C1", "B-08") 
+G.add_edge("C1", "B-01", path="7")
+G.add_edge("C1", "B-02", path="8")
+G.add_edge("C1", "B-03", path="9")
+G.add_edge("C1", "B-04", path="10")
+G.add_edge("C1", "B-05", path="11")
+G.add_edge("C1", "B-08", path="12") 
 #C2
-G.add_edge("B-06", "C2") 
+G.add_edge("B-06", "C2", path="13") 
 #Reverse C2
-G.add_edge("C2", "B-06") 
+G.add_edge("C2", "B-06", path="14") 
 #C3
-G.add_edge("B-07", "C3")
-G.add_edge("B-08", "C3")
-G.add_edge("B-09", "C3")
-G.add_edge("B-10", "C3")
+G.add_edge("B-07", "C3", path="15")
+G.add_edge("B-08", "C3", path="16")
+G.add_edge("B-09", "C3", path="17")
+G.add_edge("B-10", "C3", path="18")
 #Reverse C3
 G.add_edge("C3", "B-07")
 G.add_edge("C3", "B-08")
