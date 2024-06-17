@@ -12,7 +12,7 @@ const Page = () => {
       <div className="page-form">
         <StartEndForm />
       </div>
-      <Link href="/" className="page-link">Back</Link>
+      <Link href="/" className="page-link"></Link>
     </div>
   );
 };
