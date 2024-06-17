@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import networkx as nx
+import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
@@ -104,6 +105,9 @@ G.add_edge("C6", "Staircase 1")
 #Reverse Staircase Link
 G.add_edge("Staircase 2", "C1")
 G.add_edge("Staircase 1", "C6") 
+
+# nx.draw_planar(G, with_labels=True)
+# print(nx.shortest_path(G, source="B-01", target="B-08"))
 
 @app.route('/shortest-path', methods=['GET'])
 def shortest_path():

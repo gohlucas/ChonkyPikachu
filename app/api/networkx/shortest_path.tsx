@@ -5,6 +5,8 @@ export async function GET(req: NextRequest) {
   const start = searchParams.get("start");
   const end = searchParams.get("end");
 
+  console.log(`Incoming request with start=${start} and end=${end}`);
+
   if (!start || !end) {
     return NextResponse.json(
       { error: "Please provide both start and end parameters" },
@@ -14,7 +16,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const response = await fetch(
-      "https://chonkypikachu.onrender.com/shortest-path?start=${start}&end=${end}"
+      `https://chonkypikachu.onrender.com/shortest-path?start=${start}&end=${end}`
     );
     const data = await response.json();
 

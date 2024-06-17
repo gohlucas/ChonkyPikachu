@@ -57,7 +57,7 @@ const StartEndForm: React.FC = () => {
     try {
       // const response = await axios.get<PathDetail[]>("/api/paths", {
       //send user's start and end room to flask so that networkx can compute the shortest path
-      const response = await axios.get("/api/shortest_path", {
+      const response = await axios.get("/api/networkx", {
         params: {
           start: startRoom,
           end: endRoom,
