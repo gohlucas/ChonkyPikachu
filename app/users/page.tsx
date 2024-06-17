@@ -7,7 +7,7 @@ import './mainpage.css';
 const Page = () => {
   return (
     <div className="page-container">
-      <h1 className="page-title">ChonkyPikachu</h1>
+      <h1 className="page-title">ConveNUS</h1>
       <div className="page-subtitle">Select Start and End Rooms</div>
       <div className="page-form">
         <StartEndForm />
