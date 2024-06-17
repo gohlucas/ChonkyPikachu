@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import BuildingsList from "../components/BuildingsList";
 import RoomsList from "../components/RoomsList";
 import StartEndForm from "../components/StartEndForm";
 
-const page = () => {
+const Page = () => {
   return (
     <div style={{ color: "black" }}>
       <h1>ChonkyPikachu</h1>
@@ -16,4 +16,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
