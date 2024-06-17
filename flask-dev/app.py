@@ -5,8 +5,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 enabled_origins = {
-    "http://localhost:3000"
-    "https://chonky-pikachu.netlify.app/"
+    "http://localhost:3000/users"
+    "https://chonky-pikachu.netlify.app/users"
+    "https://chonky-pikachu.vercel.app/users"
 }
 CORS(app, origins=enabled_origins)
 
