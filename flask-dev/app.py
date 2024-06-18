@@ -2,15 +2,17 @@ from flask import Flask, request, jsonify
 import networkx as nx
 from flask_cors import CORS
 
+# deployed flask on render to allow next.js to talk to networkx
 app = Flask(__name__)
-
+# Cross Origin 
 enabled_origins = {
-    "http://localhost:3000/users"
-    "https://chonky-pikachu.netlify.app/users"
-    "https://chonky-pikachu.vercel.app/users"
+    # "http://localhost:3000"
+    "https://chonky-pikachu.netlify.app"
+    "https://chonky-pikachu.vercel.app"
 }
 CORS(app, origins=enabled_origins)
 
+#Database for networkx queries
 G = nx.DiGraph()
 
 G.add_node("B-01") #Tech HangOut
@@ -113,8 +115,7 @@ G.add_edge("C6", "Staircase 1")
 G.add_edge("Staircase 2", "C1")
 G.add_edge("Staircase 1", "C6") 
 
-# nx.draw_planar(G, with_labels=True)
-# print(nx.shortest_path(G, source="B-01", target="B-08"))
+#app details
 @app.route('/')
 def home():
     return 'Just a homepage, nothing to see here...'
