@@ -57,12 +57,17 @@ const StartEndForm: React.FC = () => {
     try {
       // const response = await axios.get<PathDetail[]>("/api/paths", {
       //send user's start and end room to flask so that networkx can compute the shortest path
-      const response = await axios.get("/api/networkx", {
-        params: {
-          start: startRoom,
-          end: endRoom,
-        },
-      });
+      // const response = await axios.get("/api/networkx/shortest_path", {
+      //   params: {
+      //     start: startRoom,
+      //     end: endRoom,
+      //   },
+      // });
+      const response = await fetch(
+        // `/api/networkx/shortest_path?start=${startRoom}&end=${endRoom}`
+        `/api/networkx?start=${startRoom}&end=${endRoom}`
+      );
+      const data = await response.json();
       // console.log(response.data); // Log the response to verify images are included
       setMessage("Rooms selected successfully!");
       // setPathDetails(response.data);
@@ -75,7 +80,7 @@ const StartEndForm: React.FC = () => {
       //   ]
       // }
       // store the response as variables
-      const { length, path } = response.data;
+      const { length, path } = data;
       setLength(length);
       setPath(path);
       setTemp(path + " " + length);

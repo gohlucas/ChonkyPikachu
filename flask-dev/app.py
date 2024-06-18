@@ -115,8 +115,11 @@ G.add_edge("Staircase 1", "C6")
 
 # nx.draw_planar(G, with_labels=True)
 # print(nx.shortest_path(G, source="B-01", target="B-08"))
+@app.route('/')
+def home():
+    return 'Just a homepage, nothing to see here...'
 
-@app.route('/shortest-path', methods=['GET'])
+@app.route('/shortest_path', methods=['GET'])
 def shortest_path():
     start = request.args.get('start')
     end = request.args.get('end')

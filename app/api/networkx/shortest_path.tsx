@@ -17,6 +17,7 @@ export async function GET(req: NextRequest) {
   try {
     const response = await fetch(
       `https://chonkypikachu.onrender.com/shortest-path?start=${start}&end=${end}`
+      // "https://chonkypikachu.onrender.com/shortest-path?start={start}&end={end}"
     );
     const data = await response.json();
 
