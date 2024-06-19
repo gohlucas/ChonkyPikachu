@@ -108,6 +108,70 @@ G.add_edge("C8","C9", path ="Turn Left")
 G.add_edge("C9","C6", path ="Turn Left")
 G.add_edge("C9","C8", path ="Turn Right")
 
+# Stairs to corridor
+G.add_edge("Stair 4","C5", path = "Walk straight")
+
+# Room to Room 
+# Corridor 1
+G.add_edge("02-01","02-02",path = "Turn left and walk striaght, it is the first room on the left")
+G.add_edge("02-01","02-03",path = "Turn left and walk straight, it is the second room on the left")
+G.add_edge("02-02","02-01", path = "Turn right and walk straight, it is the first room on the right")
+G.add_edge("02-02","02-03", path = "Turn left and walk straight, it is the first room on the left")
+G.add_edge("02-03","02-01", path = "Turn right and walk straight, it is the second room on the right")
+G.add_edge("02-03","02-02",path = "Turn right and walk straight, it is the first room on the right")
+# Corridor 2 has nothing 
+# Corridor 3 has nothing 
+# Corridor 4 has nothing 
+# Corridor 5 has nothing 
+# Corridor 6 
+G.add_edge("02-07","02-08",path = "Turn left and walk straight, it is the first room on the left")
+G.add_edge("02-07","02-09",path = "Turn left and walk straight, it is the second room on the left")
+G.add_edge("02-07","02-10",path = "Turn left and walk straight, it is the third room on the left")
+G.add_edge("02-08","02-07",path = "Turn right and walk straight, it is the first room on the right")
+G.add_edge("02-08","02-09",path = "Turn left and walk straight, it is the first room on the left")
+G.add_edge("02-08","02-10",path = "Turn left and walk straight, it is the second room on the left")
+G.add_edge("02-09","02-07",path = "Turn right and walk straight, it is the second room on the left")
+G.add_edge("02-09","02-08",path = "Turn right and walk straight, it is the first room on the left")
+G.add_edge("02-09","02-10",path = "Turn left and walk straight, it is the first room on the left")
+G.add_edge("02-10","02-07", path = "Turn right and walk straight, it is the third room on the right")
+G.add_edge("02-10","02-08", path = "Turn right and walk straight, it is the second room on the right")
+G.add_edge("02-10","02-09", path = "Turn right and walk straight, it is the first room on the right")
+# Corridor 7 has nothing 
+# Corridor 8
+G.add_edge("02-15","02-16",path = "Turn right and walk straight, it is the second room on the right")
+G.add_edge("02-15","02-17",path = "Turn right and walk straight, it is the third room on the right")
+G.add_edge("02-15","02-18",path = "It is the room directly opposite")
+G.add_edge("02-15","02-20",path = "Turn right and walk straight, it is the third room on the left")
+G.add_edge("02-15","02-21",path = "Turn right and walk straight, it is the fourth room on the left")
+G.add_edge("02-16","02-15",path = "Turn left and walk straight, it is the second room on the left")
+G.add_edge("02-16","02-17",path = "Turn right and walk straight, it is the first room on the left")
+G.add_edge("02-16","02-18",path = "Turn left and walk straight, it is the second room on the right")
+G.add_edge("02-16","02-20",path = "It is the room directly opposite")
+G.add_edge("02-16","02-21",path = "Turn right and walk straight, it is the first room on the right")
+G.add_edge("02-17","02-15",path = "Turn left and walk straight, it is the third room on the left")
+G.add_edge("02-17","02-16",path = "Turn left and walk straight, it is the first room on the left")
+G.add_edge("02-17","02-18",path = "Turn left and walk straight, it is the third room on the left")
+G.add_edge("02-17","02-20",path = "Turn left and walk straight, it is the first room on the left")
+G.add_edge("02-17","02-21",path = "It is the room directly opposite")
+G.add_edge("02-18","02-15",path = "It is the room directly opposite")
+G.add_edge("02-18","02-16",path = "Turn left and walk straight, it is the third room on the right")
+G.add_edge("02-18","02-17",path = "Turn left and walk straight, it is the fourth room on the right")
+G.add_edge("02-18","02-20",path = "Turn left and walk straight, it is the second room on the right")
+G.add_edge("02-18","02-21",path = "Turn left and walk straight, it is the third room on the right")
+G.add_edge("02-20","02-15",path = "Turn right and walk straight, it is the third room on the left")
+G.add_edge("02-20","02-16",path = "It is the room directly opposite")
+G.add_edge("02-20","02-17",path = "Turn left and walk straight, it is the second room on the right")
+G.add_edge("02-20","02-18",path = "Turn right and walk straight, it is the third room on the right")
+G.add_edge("02-20","02-21",path = "Turn left and walk straight, it is the first room on the left")
+G.add_edge("02-21","02-15",path = "Turn right and walk straight, it is the fourth room on the left")
+G.add_edge("02-21","02-16",path = "Turn right and walk straight, it is the second room on the left")
+G.add_edge("02-21","02-17",path = "It is the room directly opposite")
+G.add_edge("02-21","02-18",path = "Turn right and walk straight, it is the fourth room on the right")
+G.add_edge("02-21","02-20",path = "Turn right and walk straight, it is the first room on the left")
+
+# Corridor 9 has nothing 
+
+
 
 
 nx.draw_planar(G, with_labels=True)
