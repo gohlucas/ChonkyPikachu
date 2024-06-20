@@ -36,7 +36,7 @@
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
-  margin-top: 10%;
+  margin-top: 9%; /* Move Image up and down*/
 }
 
 .page-link:hover {

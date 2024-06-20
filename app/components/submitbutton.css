@@ -1,0 +1,55 @@
+/* submitbutton.css */
+
+/* Basic Button Styling */
+.button {
+    background-image: url('./PreSubmitButton.png'); /*Which file?*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: cover;
+    color: transparent; /* Make text invisible */
+    padding: 0; /* Padding inside the button */
+    border: none;
+    width: 200px;
+    height: 200px;
+    margin: 0; /* Margin around the button */
+    outline: none;
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 1px; /* Rounded corners */
+    transition: background-image 0.3s; /* Smooth background image transition */
+  }
+  
+  /* Button Hover Effect */
+  .button:hover {
+    background-image: url('./PostSubmitButton.png'); /*Which file?*/
+  }
+  
+  /* Centering Container */
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10vh; /* Adjust height to move the button higher */
+    text-align: center;
+    margin-top: 23vh; /* Adjust margin to position the container, push whole thing up and down */
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .label-container {
+    margin-bottom: 0.5rem; /* Reduce the gap between the lines */
+  }
+  
+  label, select {
+    margin: 0; /* Remove default margins */
+    padding: 0.2rem 0; /* Adjust padding as needed */
+  }
+  
+  h1, h2 {
+    margin: 0.5rem 0; /* Adjust margin for headings */
+  }
