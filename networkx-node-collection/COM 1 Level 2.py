@@ -35,7 +35,7 @@ G.add_node("C8") # As depicted in the diagram
 G.add_node("02-20") # Discussion Room 12
 G.add_node("02-21") # Student's Lounge
 G.add_node("Stair 4") 
-G.add_node("Lift")
+# G.add_node("Lift")
 
 # Edge adding between corridor and room
 G.add_edge("02-01","C1", path = "Walk straight till you see this corridor")
@@ -110,16 +110,16 @@ G.add_edge("C9","C8", path ="Turn Right")
 
 
 
-nx.draw_planar(G, with_labels=True)
-shortest_path = nx.shortest_path(G, source="02-01", target="02-15")
-print("Shortest path:", shortest_path)
-shortest_path_attributes = []
-len = len(shortest_path)
-for i in range(len - 1):
-    x = shortest_path[i]
-    y = shortest_path[i + 1]
-    shortest_path_attributes.append(G[x][y]['path'])
-print("Path of nodes in the shortest path:", shortest_path_attributes)
-plt.show() 
+# nx.draw_planar(G, with_labels=True)
+# shortest_path = nx.shortest_path(G, source="02-01", target="02-15")
+# print("Shortest path:", shortest_path)
+# shortest_path_attributes = []
+# len = len(shortest_path)
+# for i in range(len - 1):
+#     x = shortest_path[i]
+#     y = shortest_path[i + 1]
+#     shortest_path_attributes.append(G[x][y]['path'])
+# print("Path of nodes in the shortest path:", shortest_path_attributes)
+# plt.show() 
 
 

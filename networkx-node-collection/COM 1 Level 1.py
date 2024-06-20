@@ -1,6 +1,5 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-import pyodbc
 
 #Venv installed networkx, matplotlib, pyodbc, flask
 G = nx.DiGraph()

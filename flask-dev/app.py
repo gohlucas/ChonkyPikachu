@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 # deployed flask on render to allow next.js to talk to networkx
 app = Flask(__name__)
-# Cross Origin 
+# Cross Origin Resource Sharing to allow websites to access flask dev on render
 enabled_origins = {
     # "http://localhost:3000"
     "https://chonky-pikachu.netlify.app"
