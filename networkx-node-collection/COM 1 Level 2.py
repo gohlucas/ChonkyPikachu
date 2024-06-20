@@ -23,7 +23,7 @@ G.add_node("C6") # As depicted in the diagram
 # There is no 02-11
 G.add_node("02-12") # Seminar Room 3
 G.add_node("C7") # As depicted in the diagram
-G.add_node("02-13") # VC Room 
+# 02-13 is VC Room 
 G.add_node("02-14") # Tutorial Room 12
 G.add_node("C9") # As depicted in the diagram
 G.add_node("02-15") # ICPC Lab 
@@ -111,9 +111,12 @@ G.add_edge("C9","C8", path ="Turn Right")
 # Stairs to corridor
 G.add_edge("Stair 4","C5", path = "Walk straight")
 
+# Reverse Stairs to corridor
+G.add_edge("C5","Stair 4", path = "Walk straight")
+
 # Room to Room 
 # Corridor 1
-G.add_edge("02-01","02-02",path = "Turn left and walk striaght, it is the first room on the left")
+G.add_edge("02-01","02-02",path = "Turn left and walk straight, it is the first room on the left")
 G.add_edge("02-01","02-03",path = "Turn left and walk straight, it is the second room on the left")
 G.add_edge("02-02","02-01", path = "Turn right and walk straight, it is the first room on the right")
 G.add_edge("02-02","02-03", path = "Turn left and walk straight, it is the first room on the left")
@@ -174,7 +177,7 @@ G.add_edge("02-21","02-20",path = "Turn right and walk straight, it is the first
 
 
 
-# nx.draw_planar(G, with_labels=True)
+# nx.draw(G, with_labels=True)
 # shortest_path = nx.shortest_path(G, source="02-01", target="02-15")
 # print("Shortest path:", shortest_path)
 # shortest_path_attributes = []
