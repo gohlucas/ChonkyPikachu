@@ -1,5 +1,7 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useRouter } from 'next/navigation'; // Use 'next/navigation' for App Router
 import "./submitbutton.css";
 
 type Room = {
@@ -24,6 +26,7 @@ const StartEndForm: React.FC = () => {
   const [pathDetails, setPathDetails] = useState<PathDetail[]>([]);
   const [length, setLength] = useState<number | null>(null);
   const [path, setPath] = useState<string[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setLength(null);
@@ -60,6 +63,10 @@ const StartEndForm: React.FC = () => {
       setLength(length);
       setPath(path);
       setTemp(path + " " + length);
+
+      // Navigate to the Output page
+      router.push('/output');
+
     } catch (error) {
       console.error("Error submitting rooms:", error);
       setMessage("Error submitting rooms");
@@ -131,6 +138,7 @@ const StartEndForm: React.FC = () => {
             ))}
           </div>
         )}
+        <button className="page-link" onClick={() => router.back()}></button> {/* Add Back Button */}
       </div>
     </div>
   );

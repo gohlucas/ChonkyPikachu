@@ -1,0 +1,31 @@
+/* Output.css */
+body, html {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.output-main {
+    height: 100vh; /* Ensures the main container covers the full viewport height */
+    background-image: url('submitt.gif'); 
+    background-size: 10%; /* Ensures the background image covers the whole container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the image does not repeat */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.output-header {
+    background-color: rgba(245, 245, 245, 0.8); /* Add some transparency */
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.output-header div {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.output-content {
+    margin-top: 20px;
+}
