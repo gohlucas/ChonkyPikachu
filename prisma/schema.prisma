@@ -8,14 +8,14 @@ datasource db {
 }
 
 model Buildings {
-  BuildingID   Int     @id(map: "PK__Building__5463CDE40DDCCB16") @default(autoincrement())
+  BuildingID   Int     @id(map: "PK__Building__5463CDE468A5D01F") @default(autoincrement())
   BuildingName String  @db.VarChar(100)
   Paths        Paths[]
   Rooms        Rooms[]
 }
 
 model Paths {
-  PathID          Int       @id(map: "PK__Paths__CD67DC39A2484E0F") @default(autoincrement())
+  PathID          Int       @id(map: "PK__Paths__CD67DC398ED66A98") @default(autoincrement())
   BuildingID      Int
   RoomNumber      String?   @db.Text
   RoomName        String?   @db.Text
@@ -24,22 +24,22 @@ model Paths {
 }
 
 model Rooms {
+  RoomID     Int       @id(map: "PK__Rooms__328639196933C079") @default(autoincrement())
   BuildingID Int
   Floor      String    @db.NVarChar(255)
-  RoomID     Int       @id(map: "PK__Rooms__3286391967980B1E") @default(autoincrement())
   RoomNumber String?   @db.Text
   RoomName   String    @db.VarChar(100)
   Buildings  Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Rooms__BuildingI__75A278F5")
 }
 
 model PathImages {
-  ImageID  Int     @id(map: "PK__PathImag__7516F4EC3CE9E1BA")
+  ImageID  Int     @id(map: "PK__PathImag__7516F4EC1934F0A4")
   PathID   Int?
   ImageURL String? @db.VarChar(255)
 }
 
 model Nodes {
-  PathID          Int     @id(map: "PK__Nodes__CD67DC39C215F31E") @default(autoincrement())
+  PathID          Int     @id(map: "PK__Nodes__CD67DC39B4B36C9E") @default(autoincrement())
   FromNodeID      String? @db.VarChar(255)
   ToNodeID        String? @db.VarChar(255)
   PathDescription String? @db.Text
