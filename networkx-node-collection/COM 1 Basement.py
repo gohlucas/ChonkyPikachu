@@ -27,15 +27,15 @@ G.add_node("B-13") #IT Security & OS Lab
 G.add_node("B-14A") #Dr 2
 G.add_node("B-14B") #Dr 1
 G.add_node("Staircase 1") #Staircase outside Dr 2
-G.add_node("Staircase 2") #Staircase outside Active learning lab
-G.add_node("C1") #As depicted in Diagram
-G.add_node("C2") #As depicted in Diagram
-G.add_node("C3") #As depicted in Diagram
-G.add_node("C4") #As depicted in Diagram
-G.add_node("C5") #As depicted in Diagram
-G.add_node("C6") #As depicted in Diagram
-G.add_node("C7") #As depicted in Diagram
-G.add_node("C8") #As depicted in Diagram
+G.add_node("Staircase 3") #Staircase outside Active learning lab
+G.add_node("B-C1") #As depicted in Diagram
+G.add_node("B-C2") #As depicted in Diagram
+G.add_node("B-C3") #As depicted in Diagram
+G.add_node("B-C4") #As depicted in Diagram
+G.add_node("B-C5") #As depicted in Diagram
+G.add_node("B-C6") #As depicted in Diagram
+G.add_node("B-C7") #As depicted in Diagram
+G.add_node("B-C8") #As depicted in Diagram
 
 # G.add_edge("1", "2", path="Do nothing", image="https://imgur.com/rKnqDmn")
 
@@ -68,76 +68,80 @@ G.add_node("C8") #As depicted in Diagram
 # }
 
 #Room to Corridor
-G.add_edge("B-01-2", "C1", path="Walk til you see the corridor on the next page")
-G.add_edge("B-02", "C1", path="Walk til you see the corridor on the next page")
-G.add_edge("B-03", "C1", path="Walk til you see the corridor on the next page")
-G.add_edge("B-04", "C1", path="Walk til you see the corridor on the next page")
-G.add_edge("B-05", "C1", path="Walk til you see the corridor on the next page")
-G.add_edge("B-06", "C2", path="Walk til you see the corridor on the next page") 
-G.add_edge("B-07", "C3", path="Walk til you see the corridor on the next page")
-G.add_edge("B-08-2", "C3", path="Walk til you see the corridor on the next page")
-G.add_edge("B-09-2", "C3", path="Walk til you see the corridor on the next page")
-G.add_edge("B-10-2", "C3", path="Walk til you see the corridor on the next page")
-G.add_edge("B-09-1", "C4", path="Walk til you see the corridor on the next page")
-G.add_edge("B-10-1", "C4", path="Walk til you see the corridor on the next page")
-G.add_edge("B-11-2", "C5", path="Walk til you see the corridor on the next page")
-G.add_edge("B-12-2", "C5", path="Walk til you see the corridor on the next page")
-G.add_edge("B-11-1", "C6", path="Walk til you see the corridor on the next page")
-G.add_edge("B-12-1", "C6", path="Walk til you see the corridor on the next page")
-G.add_edge("B-13", "C6", path="Walk til you see the corridor on the next page")
-G.add_edge("B-14A", "C7", path="Walk til you see the corridor on the next page")
-G.add_edge("B-14B", "C7", path="Walk til you see the corridor on the next page")
-G.add_edge("B-01-1", "C8", path="Walk til you see the corridor on the next page")
-G.add_edge("B-08-1", "C8", path="Walk til you see the corridor on the next page") 
+G.add_edge("B-01-2", "B-C1", path="Walk til you see the corridor on the next page")
+G.add_edge("B-02", "B-C1", path="Walk til you see the corridor on the next page")
+G.add_edge("B-03", "B-C1", path="Walk til you see the corridor on the next page")
+G.add_edge("B-04", "B-C1", path="Walk til you see the corridor on the next page")
+G.add_edge("B-05", "B-C1", path="Walk til you see the corridor on the next page")
+G.add_edge("B-06", "B-C2", path="Walk til you see the corridor on the next page") 
+G.add_edge("B-07", "B-C3", path="Walk til you see the corridor on the next page")
+G.add_edge("B-08-2", "B-C3", path="Walk til you see the corridor on the next page")
+G.add_edge("B-09-2", "B-C3", path="Walk til you see the corridor on the next page")
+G.add_edge("B-10-2", "B-C3", path="Walk til you see the corridor on the next page")
+G.add_edge("B-09-1", "B-C4", path="Walk til you see the corridor on the next page")
+G.add_edge("B-10-1", "B-C4", path="Walk til you see the corridor on the next page")
+G.add_edge("B-11-2", "B-C5", path="Walk til you see the corridor on the next page")
+G.add_edge("B-12-2", "B-C5", path="Walk til you see the corridor on the next page")
+G.add_edge("B-11-1", "B-C6", path="Walk til you see the corridor on the next page")
+G.add_edge("B-12-1", "B-C6", path="Walk til you see the corridor on the next page")
+G.add_edge("B-13", "B-C6", path="Walk til you see the corridor on the next page")
+G.add_edge("B-14A", "B-C7", path="Walk til you see the corridor on the next page")
+G.add_edge("B-14B", "B-C7", path="Walk til you see the corridor on the next page")
+G.add_edge("B-01-1", "B-C8", path="Walk til you see the corridor on the next page")
+G.add_edge("B-08-1", "B-C8", path="Walk til you see the corridor on the next page") 
 
 #Corridor to room
-G.add_edge("C1", "B-01-2", path="Your destination is along this corridor")
-G.add_edge("C1", "B-02", path="Your destination is along this corridor")
-G.add_edge("C1", "B-03", path="Your destination is along this corridor")
-G.add_edge("C1", "B-04", path="Your destination is along this corridor")
-G.add_edge("C1", "B-05", path="Your destination is along this corridor")
-G.add_edge("C2", "B-06", path="Your destination is along this corridor") 
-G.add_edge("C3", "B-07", path="Your destination is along this corridor")
-G.add_edge("C3", "B-08-2", path="Your destination is along this corridor")
-G.add_edge("C3", "B-09-2", path="Your destination is along this corridor")
-G.add_edge("C3", "B-10-2", path="Your destination is along this corridor")
-G.add_edge("C4", "B-09-1", path="Your destination is along this corridor")
-G.add_edge("C4", "B-10-1", path="Your destination is along this corridor")
-G.add_edge("C5", "B-11-2", path="Your destination is along this corridor")
-G.add_edge("C5", "B-12-2", path="Your destination is along this corridor")
-G.add_edge("C6", "B-11-1", path="Your destination is along this corridor")
-G.add_edge("C6", "B-12-1", path="Your destination is along this corridor")
-G.add_edge("C6", "B-13", path="Your destination is along this corridor")
-G.add_edge("C7", "B-14A", path="Your destination is along this corridor")
-G.add_edge("C7", "B-14B", path="Your destination is along this corridor")
-G.add_edge("C8", "B-01-1", path="Your destination is along this corridor")
-G.add_edge("C8", "B-08-1", path="Your destination is along this corridor") 
+G.add_edge("B-C1", "B-01-2", path="Your destination is along this corridor")
+G.add_edge("B-C1", "B-02", path="Your destination is along this corridor")
+G.add_edge("B-C1", "B-03", path="Your destination is along this corridor")
+G.add_edge("B-C1", "B-04", path="Your destination is along this corridor")
+G.add_edge("B-C1", "B-05", path="Your destination is along this corridor")
+G.add_edge("B-C2", "B-06", path="Your destination is along this corridor") 
+G.add_edge("B-C3", "B-07", path="Your destination is along this corridor")
+G.add_edge("B-C3", "B-08-2", path="Your destination is along this corridor")
+G.add_edge("B-C3", "B-09-2", path="Your destination is along this corridor")
+G.add_edge("B-C3", "B-10-2", path="Your destination is along this corridor")
+G.add_edge("B-C4", "B-09-1", path="Your destination is along this corridor")
+G.add_edge("B-C4", "B-10-1", path="Your destination is along this corridor")
+G.add_edge("B-C5", "B-11-2", path="Your destination is along this corridor")
+G.add_edge("B-C5", "B-12-2", path="Your destination is along this corridor")
+G.add_edge("B-C6", "B-11-1", path="Your destination is along this corridor")
+G.add_edge("B-C6", "B-12-1", path="Your destination is along this corridor")
+G.add_edge("B-C6", "B-13", path="Your destination is along this corridor")
+G.add_edge("B-C7", "B-14A", path="Your destination is along this corridor")
+G.add_edge("B-C7", "B-14B", path="Your destination is along this corridor")
+G.add_edge("B-C8", "B-01-1", path="Your destination is along this corridor")
+G.add_edge("B-C8", "B-08-1", path="Your destination is along this corridor") 
 
 #Corridor link
-G.add_edge("C1", "C3", path="Turn left")
-G.add_edge("C3", "C2", path="Turn here") #To take photo
-G.add_edge("C1", "C8", path="Head straight")
-G.add_edge("C8", "C4", path="Turn right")
-G.add_edge("C8", "C6", path="Head straight")
-G.add_edge("C4", "C5", path="Turn right")
-G.add_edge("C6", "C7", path = "Turn right")
+G.add_edge("B-C1", "B-C3", path="Turn left")
+G.add_edge("B-C1", "B-C8", path="Head straight")
+G.add_edge("B-C3", "B-C2", path="Turn here") #To take photo
+G.add_edge("B-C3", "B-C8", path="Turn left")
+G.add_edge("B-C4", "B-C5", path="Turn right")
+G.add_edge("B-C4", "B-C6", path="Turn left")
+G.add_edge("B-C6", "B-C7", path = "Turn right")
+G.add_edge("B-C8", "B-C4", path="Turn right")
+G.add_edge("B-C8", "B-C6", path="Head straight")
 
 #Reverse Corridor link
-G.add_edge("C3", "C1", path="Turn right")
-G.add_edge("C2", "C3", path="Head straight")
-G.add_edge("C8", "C1", path="Head straight")
-G.add_edge("C4", "C8", path="Turn right")
-G.add_edge("C6", "C8", path="Head straight")
-G.add_edge("C5", "C4", path="Turn left")
-G.add_edge("C7", "C6", path="Turn left")
+G.add_edge("B-C3", "B-C1", path="Turn right")
+G.add_edge("B-C8", "B-C1", path="Head straight")
+G.add_edge("B-C2", "B-C3", path="Head straight")
+G.add_edge("B-C8", "B-C3", path="Turn right")
+G.add_edge("B-C5", "B-C4", path="Turn left")
+G.add_edge("B-C6", "B-C4", path="Turn right")
+G.add_edge("B-C7", "B-C6", path="Turn left")
+G.add_edge("B-C4", "B-C8", path="Turn right")
+G.add_edge("B-C6", "B-C8", path="Head straight")
 
 #Staircase link
-G.add_edge("C1", "Staircase 2", path="Turn left") 
-G.add_edge("C6", "Staircase 1", path="Turn right")
+G.add_edge("B-C1", "Staircase 3", path="Turn left and head up the stairs") 
+G.add_edge("B-C6", "Staircase 1", path="Turn right and head up the stairs")
 
 #Reverse Staircase link
-G.add_edge("Staircase 2", "C1", path="Turn right")
-G.add_edge("Staircase 1", "C6", path="Turn left") 
+G.add_edge("Staircase 3", "B-C1", path="Turn right")
+G.add_edge("Staircase 1", "B-C6", path="Turn left") 
 
 #Room to Room
 G.add_edge("B-01-2", "B-02", path="Turn left and walk straight, the room is on the left")

@@ -7,112 +7,122 @@ G = nx.DiGraph()
 G.add_node("02-01") # Seminar Room 5
 G.add_node("02-02") # Computing Gallery
 G.add_node("02-03") # Seminar Room 6
-G.add_node("C1") # As depicted in the diagram
+G.add_node("02-C1") # As depicted in the diagram
 G.add_node("02-04") # Seminar Room 2
-G.add_node("C2") # As depicted in the diagram
+G.add_node("02-C2") # As depicted in the diagram
 G.add_node("02-05") # Cerebro@SoC
-G.add_node("C5") # As depicted in the diagram
-G.add_node("02-06") # Seminar Room 1
-G.add_node("C3") # As depicted in the diagram
-G.add_node("C4") # As depicted in the diagram
+G.add_node("02-C5") # As depicted in the diagram
+G.add_node("02-06-1") # Seminar Room 1 Along Corridor 3
+G.add_node("02-06-2") # Seminar Room 1 Along Corridor 4
+G.add_node("02-C3") # As depicted in the diagram
+G.add_node("02-C4") # As depicted in the diagram
 G.add_node("02-07") # Seminar Room 7
 G.add_node("02-08") # Seminar Room 8
 G.add_node("02-09") # Seminar Room 9
 G.add_node("02-10") # Seminar Room 10
-G.add_node("C6") # As depicted in the diagram
+G.add_node("02-C6") # As depicted in the diagram
 # There is no 02-11
 G.add_node("02-12") # Seminar Room 3
-G.add_node("C7") # As depicted in the diagram
+G.add_node("02-C7") # As depicted in the diagram
 # 02-13 is VC Room 
 G.add_node("02-14") # Tutorial Room 12
-G.add_node("C9") # As depicted in the diagram
+G.add_node("02-C9") # As depicted in the diagram
 G.add_node("02-15") # ICPC Lab 
 G.add_node("02-16") # Tutorial Room 11
 G.add_node("02-17") # Tutorial Room 10
 G.add_node("02-18") # Computing Club 
-G.add_node("C8") # As depicted in the diagram
+G.add_node("02-C8") # As depicted in the diagram
 # 02-19 is Undergraduate Studies office, out of bounds
 G.add_node("02-20") # Discussion Room 12
 G.add_node("02-21") # Student's Lounge
-G.add_node("Stair 4") 
+# G.add_node("Staircase 4") added alr
 # G.add_node("Lift")
+G.add_node("Cerebro Glass Door") # As stated
+G.add_node("SR3 Glass Door") # As stated
 
 # Edge adding between corridor and room
-G.add_edge("02-01","C1", path = "Walk straight till you see this corridor")
-G.add_edge("02-02","C1", path = "Walk straight till you see this corridor")
-G.add_edge("02-03","C1", path = "Walk straight till you see this corridor")
-G.add_edge("02-04","C2", path = "")
-G.add_edge("02-06","C3", path = "")
-G.add_edge("02-06","C4", path = "")
-G.add_edge("02-05","C5", path = "")
-G.add_edge("02-07","C6", path = "")
-G.add_edge("02-08","C6", path = "Walk straight till you see this corridor")
-G.add_edge("02-09","C6", path = "Walk straight till you see this corridor")
-G.add_edge("02-10","C6", path = "Walk straight till you see this corridor")
-G.add_edge("02-12","C7", path = "")
-G.add_edge("02-15","C8", path = "Walk straight till you see this corridor")
-G.add_edge("02-16","C8", path = "Walk straight till you see this corridor")
-G.add_edge("02-17","C8", path = "Walk straight till you see this corridor")
-G.add_edge("02-18","C8", path = "Walk straight till you see this corridor")
-G.add_edge("02-20","C8", path = "Walk straight till you see this corridor")
-G.add_edge("02-21","C8", path = "Walk straight till you see this corridor")
-G.add_edge("02-14","C9", path = "")
+G.add_edge("02-01","02-C1", path = "Walk straight till you see this corridor")
+G.add_edge("02-02","02-C1", path = "Walk straight till you see this corridor")
+G.add_edge("02-03","02-C1", path = "Walk straight till you see this corridor")
+G.add_edge("02-04","02-C2", path = "Walk til you see the corridor on the next page")
+G.add_edge("02-06-1","02-C3", path = "Walk til you see the corridor on the next page")
+G.add_edge("02-06-2","02-C4", path = "Walk til you see the corridor on the next page")
+G.add_edge("02-05","02-C5", path = "Walk til you see the corridor on the next page")
+G.add_edge("02-07","02-C6", path = "Walk til you see the corridor on the next page")
+G.add_edge("02-08","02-C6", path = "Walk straight till you see this corridor")
+G.add_edge("02-09","02-C6", path = "Walk straight till you see this corridor")
+G.add_edge("02-10","02-C6", path = "Walk straight till you see this corridor")
+G.add_edge("02-12","02-C7", path = "Walk til you see the corridor on the next page")
+G.add_edge("02-15","02-C8", path = "Walk straight till you see this corridor")
+G.add_edge("02-16","02-C8", path = "Walk straight till you see this corridor")
+G.add_edge("02-17","02-C8", path = "Walk straight till you see this corridor")
+G.add_edge("02-18","02-C8", path = "Walk straight till you see this corridor")
+G.add_edge("02-20","02-C8", path = "Walk straight till you see this corridor")
+G.add_edge("02-21","02-C8", path = "Walk straight till you see this corridor")
+G.add_edge("02-14","02-C9", path = "Walk til you see the corridor on the next page")
 
 # Reverse Edges between corridor and room 
-G.add_edge("C1","02-01", path = "Walk straight, the room is on right")
-G.add_edge("C1","02-02", path = "Walk straight, the room is on right")
-G.add_edge("C1","02-03", path = "Walk straight, the room is on right")
-G.add_edge("C2","02-04", path = "")
-G.add_edge("C3","02-06", path = "")
-G.add_edge("C4","02-06", path = "")
-G.add_edge("C5","02-05", path = "")
-G.add_edge("C6","02-07", path = "")
-G.add_edge("C6","02-08", path = "Walk straight, the room is on left")
-G.add_edge("C6","02-09", path = "Walk straight, the room is on left")
-G.add_edge("C6","02-10", path = "Walk straight, the room is on left")
-G.add_edge("C7","02-12", path = "")
-G.add_edge("C8","02-15", path = "Walk straight, the room is on left")
-G.add_edge("C8","02-16", path = "Walk straight, the room is on left")
-G.add_edge("C8","02-17", path = "Walk straight, the room is on left")
-G.add_edge("C8","02-18", path = "Walk straight, the room is on right")
-G.add_edge("C8","02-20", path = "Walk straight, the room is on right")
-G.add_edge("C8","02-21", path = "Walk straight, the room is on right")
-G.add_edge("C9","02-14", path = "")
+G.add_edge("02-C1","02-01", path = "Walk straight, the room is on right")
+G.add_edge("02-C1","02-02", path = "Walk straight, the room is on right")
+G.add_edge("02-C1","02-03", path = "Walk straight, the room is on right")
+G.add_edge("02-C2","02-04", path = "Your destination is along this corridor")
+G.add_edge("02-C3","02-06-1", path = "Your destination is along this corridor")
+G.add_edge("02-C4","02-06-2", path = "Your destination is along this corridor")
+G.add_edge("02-C5","02-05", path = "Your destination is along this corridor")
+G.add_edge("02-C6","02-07", path = "Your destination is along this corridor")
+G.add_edge("02-C6","02-08", path = "Walk straight, the room is on left")
+G.add_edge("02-C6","02-09", path = "Walk straight, the room is on left")
+G.add_edge("02-C6","02-10", path = "Walk straight, the room is on left")
+G.add_edge("02-C7","02-12", path = "Your destination is along this corridor")
+G.add_edge("02-C8","02-15", path = "Walk straight, the room is on left")
+G.add_edge("02-C8","02-16", path = "Walk straight, the room is on left")
+G.add_edge("02-C8","02-17", path = "Walk straight, the room is on left")
+G.add_edge("02-C8","02-18", path = "Walk straight, the room is on right")
+G.add_edge("02-C8","02-20", path = "Walk straight, the room is on right")
+G.add_edge("02-C8","02-21", path = "Walk straight, the room is on right")
+G.add_edge("02-C9","02-14", path = "Your destination is along this corridor")
 
 #Edge adding between corridors:
-G.add_edge("C1","C2", path ="Turn Right")
-G.add_edge("C1","C3", path ="Walk Straight")
-G.add_edge("C2","C1", path ="Turn Left")
-G.add_edge("C2","C3", path ="Turn Right")
-G.add_edge("C2","C4", path ="Walk Straight")
-G.add_edge("C2","C5", path ="Turn Right")
-G.add_edge("C3","C1", path ="Walk Straight")
-G.add_edge("C3","C2", path ="Turn Right")
-G.add_edge("C3","C4", path ="Turn Left")
-G.add_edge("C4","C3", path ="Turn Right")
-G.add_edge("C4","C5", path ="Walk Straight")
-G.add_edge("C4","C6", path ="Turn Left")
-G.add_edge("C4","C7", path ="Walk Straight")
-G.add_edge("C5","C4", path ="Walk Straight")
-G.add_edge("C5","C7", path ="Turn Right")
-G.add_edge("C5","C8", path ="Turn Right")
-G.add_edge("C6","C7", path ="Turn Left")
-G.add_edge("C6","C9", path ="Turn Right")
-G.add_edge("C7","C4", path ="Walk Straight")
-G.add_edge("C7","C5", path ="Walk Straight")
-G.add_edge("C7","C6", path ="Walk Straight")
-G.add_edge("C7","C8", path ="Turn Left")
-G.add_edge("C8","C5", path ="Walk Straight")
-G.add_edge("C8","C7", path ="Turn Right")
-G.add_edge("C8","C9", path ="Turn Left")
-G.add_edge("C9","C6", path ="Turn Left")
-G.add_edge("C9","C8", path ="Turn Right")
+G.add_edge("02-C1","02-C2", path ="Turn right, then turn left")
+G.add_edge("02-C1","02-C3", path ="Walk straight")
+G.add_edge("02-C2","02-C1", path ="Turn left")
+G.add_edge("02-C2","02-C3", path ="Turn right")
+G.add_edge("02-C2","Cerebro Glass Door", path ="Walk straight pass the door")
+G.add_edge("Cerebro Glass Door", "02-C2", path ="Walk straight")
+G.add_edge("Cerebro Glass Door","02-C4", path ="Walk straight")
+G.add_edge("02-C4", "Cerebro Glass Door", path ="Walk straight pass the door")
+G.add_edge("Cerebro Glass Door","02-C5", path ="Turn right")
+G.add_edge("02-C5","Cerebro Glass Door", path ="Turn left and walk pass the door")
+G.add_edge("02-C3","02-C1", path ="Walk straight")
+G.add_edge("02-C3","02-C2", path ="Turn right")
+G.add_edge("02-C3","Cerebro Glass Door", path ="Turn left and walk pass the door")
+G.add_edge("Cerebro Glass Door", "02-C3", path ="Turn right")
+G.add_edge("02-C4","02-C5", path ="Walk straight")
+G.add_edge("02-C4","SR3 Glass Door", path ="Turn left and walk pass the door")
+G.add_edge("SR3 Glass Door", "02-C4", path ="Turn right")
+G.add_edge("SR3 Glass Door","02-C6", path ="Turn right")
+G.add_edge("02-C4","02-C7", path ="Walk straight")
+G.add_edge("02-C5","02-C4", path ="Walk straight")
+G.add_edge("02-C5","02-C7", path ="Turn right")
+G.add_edge("02-C5","02-C8", path ="Walk straight") #Photo of Cerebro to Com Club Student Room 
+G.add_edge("02-C6", "SR3 Glass Door", path="Turn left and walk pass the door")
+G.add_edge("SR3 Glass Door","02-C7", path ="Head straight")
+G.add_edge("02-C6","02-C9", path ="Turn right")
+G.add_edge("02-C7","02-C4", path ="Walk straight")
+G.add_edge("02-C7","02-C5", path ="Walk straight")
+G.add_edge("02-C7","SR3 Glass Door", path ="Walk straight pass the door")
+G.add_edge("02-C7","02-C8", path ="Turn left")
+G.add_edge("02-C8","02-C5", path ="Walk straight")
+G.add_edge("02-C8","02-C7", path ="Turn right")
+G.add_edge("02-C8","02-C9", path ="Turn left")
+G.add_edge("02-C9","02-C6", path ="Turn left")
+G.add_edge("02-C9","02-C8", path ="Turn right")
 
 # Stairs to corridor
-G.add_edge("Stair 4","C5", path = "Walk straight")
+G.add_edge("Staircase 4","02-C5", path = "Walk straight and turn left, walking pass the door")
 
 # Reverse Stairs to corridor
-G.add_edge("C5","Stair 4", path = "Walk straight")
+G.add_edge("02-C5","Staircase 4", path = "Walk straight pass the door and head up the staircase on the right")
 
 # Room to Room 
 # Corridor 1
@@ -171,22 +181,19 @@ G.add_edge("02-21","02-16",path = "Turn right and walk straight, it is the secon
 G.add_edge("02-21","02-17",path = "It is the room directly opposite")
 G.add_edge("02-21","02-18",path = "Turn right and walk straight, it is the fourth room on the right")
 G.add_edge("02-21","02-20",path = "Turn right and walk straight, it is the first room on the left")
-
 # Corridor 9 has nothing 
 
 
-
-
-# nx.draw(G, with_labels=True)
-# shortest_path = nx.shortest_path(G, source="02-01", target="02-15")
-# print("Shortest path:", shortest_path)
-# shortest_path_attributes = []
-# len = len(shortest_path)
-# for i in range(len - 1):
-#     x = shortest_path[i]
-#     y = shortest_path[i + 1]
-#     shortest_path_attributes.append(G[x][y]['path'])
-# print("Path of nodes in the shortest path:", shortest_path_attributes)
+nx.draw(G, with_labels=True)
+shortest_path = nx.shortest_path(G, source="02-01", target="02-14")
+print("Shortest path:", shortest_path)
+shortest_path_attributes = []
+len = len(shortest_path)
+for i in range(len - 1):
+    x = shortest_path[i]
+    y = shortest_path[i + 1]
+    shortest_path_attributes.append(G[x][y]['path'])
+print("Path of nodes in the shortest path:", shortest_path_attributes)
 # plt.show() 
 
 
