@@ -532,20 +532,22 @@ G.add_edge("02-21","02-18",path = "Turn right and walk straight, it is the fourt
 G.add_edge("02-21","02-20",path = "Turn right and walk straight, it is the first room on the left")
 # Corridor 9 has nothing 
 
-nx.draw(G, with_labels=True)
+
+all_nodes = G.nodes
+all_edges = G.edges
+# nx.draw(G, with_labels=True)
 
 #Testing
-shortest_path = nx.shortest_path(G, source="B-12-2", target="02-10")
-print("Shortest path:", shortest_path)
-shortest_path_attributes = []
-for i in range(len(shortest_path) - 1):
-    x = shortest_path[i]
-    y = shortest_path[i + 1]
-    shortest_path_attributes.append(G[x][y]['path'])
-    # shortest_path_attributes.append(G[x][y]['image'])
-print("Path of nodes in the shortest path:", shortest_path_attributes)
+# shortest_path = nx.shortest_path(G, source="B-12-2", target="02-10")
+# print("Shortest path:", shortest_path)
+# shortest_path_attributes = []
+# for i in range(len(shortest_path) - 1):
+#     x = shortest_path[i]
+#     y = shortest_path[i + 1]
+#     shortest_path_attributes.append(G[x][y]['path'])
+#     # shortest_path_attributes.append(G[x][y]['image'])
+# print("Path of nodes in the shortest path:", shortest_path_attributes)
 
-
-plt.show() 
+# plt.show() 
 
 

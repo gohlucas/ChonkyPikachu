@@ -19,7 +19,7 @@ G = nx.DiGraph()
 G.add_nodes_from(all_nodes)
 G.add_edges_from(all_edges)
 # nx.draw(G, with_labels=True)
-# plt.show()
+# plt.show()clear
 
 #app details
 @app.route('/')
