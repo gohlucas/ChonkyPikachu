@@ -22,15 +22,11 @@ const StartEndForm: React.FC = () => {
   const [startRoom, setStartRoom] = useState<string>("");
   const [endRoom, setEndRoom] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [temp, setTemp] = useState<string>("");
   const [pathDetails, setPathDetails] = useState<PathDetail[]>([]);
-  const [length, setLength] = useState<number | null>(null);
   const [path, setPath] = useState<string[]>([]);
   const router = useRouter();
 
   useEffect(() => {
-    setLength(null);
-    setPath([]);
     const fetchRooms = async () => {
       try {
         const response = await axios.get<Room[]>("/api/rooms");
@@ -59,10 +55,11 @@ const StartEndForm: React.FC = () => {
       const response = await fetch(`/api/networkx?start=${startRoom}&end=${endRoom}`);
       const data = await response.json();
       setMessage("Rooms selected successfully!");
-      const { length, path } = data;
-      setLength(length);
+      const { path } = data;
       setPath(path);
-      setTemp(path + " " + length);
+
+      // Store path in localStorage
+      localStorage.setItem('path', JSON.stringify(path));
 
       // Navigate to the Output page
       router.push('/output');
@@ -116,7 +113,6 @@ const StartEndForm: React.FC = () => {
           <button type="submit" className="button">Navigate!</button>
         </form>
         {message && <p>{message}</p>}
-        {temp && <p>{temp}</p>}
         {pathDetails.length > 0 && (
           <div>
             {pathDetails.map((detail) => (
