@@ -15,13 +15,10 @@ const Output: React.FC = () => {
 
   return (
     <main className="output-main">
-      <header className="output-header">
-        <div>Output</div>
-      </header>
-      <div className="output-content">
+      <div className="output-content-step">
         {/* Display the navigation results or any other information here */}
         {path.length > 0 && (
-          <div>
+          <div className="output-content-step">
             <p>Path: {path.join(', ')}</p>
           </div>
         )}

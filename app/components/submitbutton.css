@@ -12,7 +12,7 @@
   border: none;
   width: 200px;
   height: 200px;
-  margin: 0; /* Margin around the button */
+  margin-top:30px;
   outline: none;
   cursor: pointer; /* Pointer cursor on hover */
   border-radius: 1px; /* Rounded corners */
@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Adjust height */
+  margin-top: 125px; /* Adjust height */
   text-align: center;
 }
   
@@ -41,7 +41,8 @@
 }
   
 .label-container {
-  margin-bottom: 0.5rem; /* Reduce the gap between the lines */
+  margin-top: 1rem;
+  margin-bottom: 1rem; /* Reduce the gap between the lines */
 }
   
 label, select {
@@ -62,7 +63,8 @@ h1, h2 {
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
-  margin-top: 20px; /* Adjust margin */
+  margin-top: 60px; /* Adjust margin */
+  margin-bottom: 50px;
   border: none;
 }
   
