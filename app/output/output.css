@@ -1,18 +1,16 @@
-/* Output.css */
-
 .output-main {
-    height: 100vh; /* Ensures the main container covers the full viewport height */
+    height: 100vh; 
     background-image: url('Output.png'); 
-    background-size: cover; /* Ensures the background image covers the whole container */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Ensures the image does not repeat */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     padding: 20px;
     font-family: Arial, sans-serif;
 }
 
 .output-content-step {
-    display: flex; /* Ensures the content is treated as a block element */
-    text-align: right; /* Ensures content within the block is left-aligned */
+    display: flex; 
+    text-align: right; 
     margin-top:70px;
     margin-left:100px;
 }
