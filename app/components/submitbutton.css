@@ -1,36 +1,30 @@
-/* submitbutton.css */
-
-/* Basic Button Styling */
 .button {
-  background-image: url('./PreSubmitButton.png'); /* Adjust with correct path */
+  background-image: url('./PreSubmitButton.png'); 
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
   background-size: cover;
-  color: transparent; /* Make text invisible */
-  padding: 0; /* Padding inside the button */
+  color: transparent; 
+  padding: 0; 
   border: none;
   width: 200px;
   height: 200px;
-  margin-top:30px;
   outline: none;
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 1px; /* Rounded corners */
-  transition: background-image 0.3s; /* Smooth background image transition */
+  cursor: pointer; 
+  border-radius: 1px; 
+  transition: background-image 0.3s; 
 }
-  
-/* Button Hover Effect */
+
 .button:hover {
-  background-image: url('./PostSubmitButton.png'); /* Adjust with correct path */
+  background-image: url('./PostSubmitButton.png'); 
 }
-  
-/* Centering Container */
+
 .center-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 125px; /* Adjust height */
+  margin-top: 125px; 
   text-align: center;
 }
   
@@ -42,33 +36,41 @@
   
 .label-container {
   margin-top: 1rem;
-  margin-bottom: 1rem; /* Reduce the gap between the lines */
+  margin-bottom: 1rem; 
 }
   
 label, select {
-  margin: 0; /* Remove default margins */
-  padding: 0.2rem 0; /* Adjust padding as needed */
+  margin: 0; 
+  padding: 0.2rem 0; 
 }
   
 h1, h2 {
-  margin: 0.5rem 0; /* Adjust margin for headings */
+  margin: 0.5rem 0; 
 }
 
 .page-link {
   display: inline-block;
   width: 200px; 
   height: 200px; 
-  background-image: url('./PreBackButton.png'); /* Adjust with correct path */
+  background-image: url('./PreBackButton.png'); 
   background-size: 160%;
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
-  margin-top: 60px; /* Adjust margin */
+  margin-top: 50px; 
   margin-bottom: 50px;
   border: none;
 }
   
 .page-link:hover {
-  background-image: url('./PostBackButton.png'); /* Adjust with correct path */
+  background-image: url('./PostBackButton.png'); 
   background-repeat: no-repeat;
+}
+
+.error-message {
+  color: black;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
 }

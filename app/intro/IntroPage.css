@@ -1,6 +1,3 @@
-/* IntroPage.css */
-
-/* Setting a background image for the entire webpage */
 body {
   background-image: url('./WebPage\ Introduction.png');
   background-position: center;
@@ -15,58 +12,32 @@ body {
   flex-direction: column;
 }
 
-
-/* Styling the header */
 header {
   color: black;
   padding: 0px;
   text-align: center;
 }
 
-
-
-/* Navigation bar styling */
-nav {
-  background-color: #444;
-  overflow: hidden;
-}
-
-nav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Basic Button Styling */
 .button {
-  background-image: url('./PreButton.png'); /* Default GIF */
+  background-image: url('./PreButton.png'); 
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
   background-size: contain;
-  color: transparent; /* Make text invisible */
-  padding: 0; /* Padding inside the button */
-  text-align: center; /* Center the text */
-  text-decoration: none; /* Remove underline from text */
+  color: transparent; 
+  padding: 0; 
+  text-align: center;
+  text-decoration: none; 
   border:none;
   width: 600px;
   height: 400px;
-  margin: 0; /* Margin around the button */
+  margin: 0; 
   outline: none;
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 1px; /* Rounded corners */
-  transition: background-image 0.3s; /* Smooth background image transition */
+  cursor: pointer; 
+  border-radius: 1px; 
+  transition: background-image 0.3s; 
 }
 
-/* Button Hover Effect */
 .button:hover {
-  background-image: url('./PostButton.png'); /* Hover GIF */
+  background-image: url('./PostButton.png'); 
 }

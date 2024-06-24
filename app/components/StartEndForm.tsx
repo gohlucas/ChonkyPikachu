@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useRouter } from "next/navigation"; // Use 'next/navigation' for App Router
-import "./submitbutton.css";
+import axios from "axios"; //Make API request
+import { useRouter } from "next/navigation";
+import "./submitbutton.css"; //For styling
 
+//Structure for Room and PathDetail
 type Room = {
   BuildingID: number;
   RoomID: number;
@@ -12,8 +13,8 @@ type Room = {
 };
 
 const StartEndForm: React.FC = () => {
-  const [rooms, setRooms] = useState<Room[]>([]);
-  const [startRoom, setStartRoom] = useState<string>("");
+  const [rooms, setRooms] = useState<Room[]>([]); //Holds list of rooms fetched. Inital state is just empty room variable
+  const [startRoom, setStartRoom] = useState<string>(""); //Stores selected start and end room
   const [endRoom, setEndRoom] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [imageList, setImageList] = useState<string[]>([]);
@@ -24,17 +25,18 @@ const StartEndForm: React.FC = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get<Room[]>("/api/rooms");
-        setRooms(response.data);
+        const response = await axios.get<Room[]>("/api/rooms"); //HTTP GET Request, Fetch response from /api/rooms which queries database
+        setRooms(response.data); //Sets room
       } catch (error) {
         console.error("Error fetching rooms:", error);
       }
     };
 
-    fetchRooms();
+    fetchRooms(); //Actual call
   }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
+    //Form submission
     event.preventDefault();
     if (!startRoom || !endRoom) {
       setMessage("Please select both start and end rooms.");
@@ -49,7 +51,7 @@ const StartEndForm: React.FC = () => {
     try {
       const response = await fetch(
         `/api/networkx?start=${startRoom}&end=${endRoom}`
-      );
+      ); //Runs Networkx
       const data = await response.json();
       setMessage("Rooms selected successfully!");
       const { path } = data;
@@ -76,7 +78,7 @@ const StartEndForm: React.FC = () => {
       console.log("This is the urlList: ", urlList);
 
       // Store path in localStorage
-      localStorage.setItem("path", JSON.stringify(pathList));
+      localStorage.setItem("path", JSON.stringify(pathList)); //Stores path in local stroage to be used in output later
       localStorage.setItem("image", JSON.stringify(imageList));
 
       // Navigate to the Output page
@@ -88,6 +90,7 @@ const StartEndForm: React.FC = () => {
   };
 
   return (
+    //Structure of the page
     <div className="center-container">
       <h1>Select Start and End Rooms</h1>
       <div className="form-container">
@@ -130,14 +133,14 @@ const StartEndForm: React.FC = () => {
               </select>
             </label>
           </div>
+          {message && <p className="error-message">{message}</p>}
           <button type="submit" className="button">
             Navigate!
           </button>
         </form>
-        {message && <p>{message}</p>}
         {/* {pathDetails.length > 0 && (
           <div>
-            {pathDetails.map((detail) => (
+            {pathDetails.map((detail) => (  //Iterate items in array
               <div key={detail.PathID}>
                 <h2>Step {detail.PathID}</h2>
                 <p>{detail.instruction}</p>
@@ -156,8 +159,7 @@ const StartEndForm: React.FC = () => {
             ))}
           </div>
         )} */}
-        <button className="page-link" onClick={() => router.back()}></button>{" "}
-        {/* Add Back Button */}
+        <button className="page-link" onClick={() => router.back()}></button>
       </div>
     </div>
   );
