@@ -64,7 +64,7 @@ const StartEndForm: React.FC = () => {
       const urlList: string[] = [];
 
       path.forEach((element: string, index: number) => {
-        if (index === 0) {
+        if (index % 2 === 0) {
           pathDescriptionList.push(element);
         } else {
           urlList.push(element);

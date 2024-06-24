@@ -210,7 +210,6 @@ G.add_edge("01-14-2", "01-16", path="Turn left and walk straight, the room is on
 G.add_edge("01-16", "01-14-2", path="Turn right and walk straight, the room is on the left", image="https://acesse.dev/b1Qf1")
 
 # nx.draw(G, with_labels=True)
-
 #Testing
 # shortest_path = nx.shortest_path(G, source="01-11-1", target="01-20-2")
 # print("Shortest path:", shortest_path)

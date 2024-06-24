@@ -532,21 +532,38 @@ G.add_edge("02-21","02-18",path = "Turn right and walk straight, it is the fourt
 G.add_edge("02-21","02-20",path = "Turn right and walk straight, it is the first room on the left", image="https://acesse.dev/b1Qf1")
 # Corridor 9 has nothing 
 
+def path_finder(start, end):
+    try:
+        path = nx.shortest_path(G, source=start, target=end)
+        length = int(nx.shortest_path_length(G, source=start, target=end)) + 1
+        shortest_path_attributes = []
+        for i in range(int(length / 2)):
+            x = path[i]
+            y = path[i + 1]
+            shortest_path_attributes.append(G[x][y]['image'])
+            shortest_path_attributes.append(G[x][y]['path'])
+        return shortest_path_attributes
+    except nx.NetworkXNoPath:
+        return "No path found", None
+    except Exception as e:
+        return str(e), None
+    
+if __name__ == "__main__":
+    pass
 
-all_nodes = G.nodes
-all_edges = G.edges
+
 # nx.draw(G, with_labels=True)
 
-#Testing
-shortest_path = nx.shortest_path(G, source="B-02", target="B-13")
-print("Shortest path:", shortest_path)
-shortest_path_attributes = []
-for i in range(len(shortest_path) - 1):
-    x = shortest_path[i]
-    y = shortest_path[i + 1]
-    shortest_path_attributes.append(G[x][y]['path'])
-    # shortest_path_attributes.append(G[x][y]['image'])
-print("Path of nodes in the shortest path:", shortest_path_attributes)
+# #Testing
+# shortest_path = nx.shortest_path(G, source="B-02", target="B-13")
+# print("Shortest path:", shortest_path)
+# shortest_path_attributes = []
+# for i in range(len(shortest_path) - 1):
+#     x = shortest_path[i]
+#     y = shortest_path[i + 1]
+#     shortest_path_attributes.append(G[x][y]['path'])
+#     shortest_path_attributes.append(G[x][y]['image'])
+# print("Path of nodes in the shortest path:", shortest_path_attributes)
 
 # plt.show() 
 
