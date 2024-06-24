@@ -1,18 +1,10 @@
 from flask import Flask, request, jsonify
 import networkx as nx
-# from flask_cors import CORS
 from COM1 import all_nodes, all_edges
 import matplotlib as plt
 
 # deployed flask on render to allow next.js to talk to networkx
 app = Flask(__name__)
-# Cross Origin Resource Sharing to allow websites to access flask dev on render
-# enabled_origins = {
-#     # "http://localhost:3000"
-#     "https://chonky-pikachu.netlify.app"
-#     "https://chonky-pikachu.vercel.app"
-# }
-# CORS(app, origins=enabled_origins)
 
 #Database for networkx queries
 G = nx.DiGraph()

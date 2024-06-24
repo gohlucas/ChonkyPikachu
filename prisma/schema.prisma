@@ -26,7 +26,7 @@ model Paths {
 model Rooms {
   RoomID     Int       @id(map: "PK__Rooms__328639196933C079") @default(autoincrement())
   BuildingID Int
-  Floor      String    @db.NVarChar(255)
+  Floor      String?   @db.Text
   RoomNumber String?   @db.Text
   RoomName   String    @db.VarChar(100)
   Buildings  Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Rooms__BuildingI__75A278F5")

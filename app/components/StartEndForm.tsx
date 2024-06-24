@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useRouter } from 'next/navigation'; // Use 'next/navigation' for App Router
+import { useRouter } from "next/navigation"; // Use 'next/navigation' for App Router
 import "./submitbutton.css";
 
 type Room = {
@@ -11,18 +11,13 @@ type Room = {
   RoomNumber: string;
 };
 
-type PathDetail = {
-  PathID: number;
-  instruction: string | null;
-  images: string[];
-};
-
 const StartEndForm: React.FC = () => {
   const [rooms, setRooms] = useState<Room[]>([]);
   const [startRoom, setStartRoom] = useState<string>("");
   const [endRoom, setEndRoom] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [pathDetails, setPathDetails] = useState<PathDetail[]>([]);
+  const [imageList, setImageList] = useState<string[]>([]);
+  const [pathList, setPathList] = useState<string[]>([]);
   const [path, setPath] = useState<string[]>([]);
   const router = useRouter();
 
@@ -52,18 +47,40 @@ const StartEndForm: React.FC = () => {
     }
 
     try {
-      const response = await fetch(`/api/networkx?start=${startRoom}&end=${endRoom}`);
+      const response = await fetch(
+        `/api/networkx?start=${startRoom}&end=${endRoom}`
+      );
       const data = await response.json();
       setMessage("Rooms selected successfully!");
       const { path } = data;
       setPath(path);
 
+      // path is a list taken from networkx containing the description of path to take and the corresponding image to show user
+      // ["path1", "urlforimg1", "path2"...]
+
+      const pathDescriptionList: string[] = [];
+      const urlList: string[] = [];
+
+      path.forEach((element: string, index: number) => {
+        if (index === 0) {
+          pathDescriptionList.push(element);
+        } else {
+          urlList.push(element);
+        }
+      });
+      // separate info into 2 lists
+      setPathList(pathDescriptionList);
+      setImageList(urlList);
+      console.log("successful allocation from StartEndForm");
+      console.log("This is the pathDescriptionList: ", pathDescriptionList);
+      console.log("This is the urlList: ", urlList);
+
       // Store path in localStorage
-      localStorage.setItem('path', JSON.stringify(path));
+      localStorage.setItem("path", JSON.stringify(pathList));
+      localStorage.setItem("image", JSON.stringify(imageList));
 
       // Navigate to the Output page
-      router.push('/output');
-
+      router.push("/output");
     } catch (error) {
       console.error("Error submitting rooms:", error);
       setMessage("Error submitting rooms");
@@ -97,7 +114,10 @@ const StartEndForm: React.FC = () => {
           <div className="label-container">
             <label>
               End Room:
-              <select value={endRoom} onChange={(e) => setEndRoom(e.target.value)}>
+              <select
+                value={endRoom}
+                onChange={(e) => setEndRoom(e.target.value)}
+              >
                 <option value="">Select...</option>
                 {rooms.map((room) => (
                   <option
@@ -110,10 +130,12 @@ const StartEndForm: React.FC = () => {
               </select>
             </label>
           </div>
-          <button type="submit" className="button">Navigate!</button>
+          <button type="submit" className="button">
+            Navigate!
+          </button>
         </form>
         {message && <p>{message}</p>}
-        {pathDetails.length > 0 && (
+        {/* {pathDetails.length > 0 && (
           <div>
             {pathDetails.map((detail) => (
               <div key={detail.PathID}>
@@ -133,8 +155,9 @@ const StartEndForm: React.FC = () => {
               </div>
             ))}
           </div>
-        )}
-        <button className="page-link" onClick={() => router.back()}></button> {/* Add Back Button */}
+        )} */}
+        <button className="page-link" onClick={() => router.back()}></button>{" "}
+        {/* Add Back Button */}
       </div>
     </div>
   );
