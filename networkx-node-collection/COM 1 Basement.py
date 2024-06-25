@@ -150,15 +150,15 @@ G.add_edge("B-14B", "B-14A", path="Walk straight, the room is on the right", ima
 # nx.draw(G, with_labels=True)
 
 #Testing
-shortest_path = nx.shortest_path(G, source="B-14A", target="B-03")
-# print("Shortest path:", shortest_path)
-shortest_path_attributes = []
-for i in range(len(shortest_path) - 1):
-    x = shortest_path[i]
-    y = shortest_path[i + 1]
-    shortest_path_attributes.append(G[x][y]['image'])
-    shortest_path_attributes.append(G[x][y]['path'])
-print("Path of nodes in the shortest path:", shortest_path_attributes)
+# shortest_path = nx.shortest_path(G, source="B-14A", target="B-03")
+# # print("Shortest path:", shortest_path)
+# shortest_path_attributes = []
+# for i in range(len(shortest_path) - 1):
+#     x = shortest_path[i]
+#     y = shortest_path[i + 1]
+#     shortest_path_attributes.append(G[x][y]['image'])
+#     shortest_path_attributes.append(G[x][y]['path'])
+# print("Path of nodes in the shortest path:", shortest_path_attributes)
 
 
 # plt.show() 

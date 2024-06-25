@@ -23,6 +23,18 @@ const StartEndForm: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
+    if (pathList.length > 0 && imageList.length > 0) {
+      // Store path in localStorage
+      localStorage.setItem("path", JSON.stringify(pathList)); //Stores path in local stroage to be used in output later
+      localStorage.setItem("image", JSON.stringify(imageList));
+      console.log("This is the pathList: ", pathList);
+      console.log("This is the imageList: ", imageList);
+      // Navigate to the Output page
+      router.push("/output");
+    }
+  }, [pathList, imageList]);
+
+  useEffect(() => {
     const fetchRooms = async () => {
       try {
         const response = await axios.get<Room[]>("/api/rooms"); //HTTP GET Request, Fetch response from /api/rooms which queries database
@@ -54,35 +66,30 @@ const StartEndForm: React.FC = () => {
       ); //Runs Networkx
       const data = await response.json();
       setMessage("Rooms selected successfully!");
-      const { path } = data;
-      setPath(path);
 
+      const path_temp = data;
+      console.log("raw data for path: ", path_temp);
+      // console.log("stored data for path: ", path);
       // path is a list taken from networkx containing the description of path to take and the corresponding image to show user
       // ["path1", "urlforimg1", "path2"...]
-
       const pathDescriptionList: string[] = [];
       const urlList: string[] = [];
 
-      path.forEach((element: string, index: number) => {
+      path_temp.forEach((element: string, index: number) => {
+        // path.forEach((element: string, index: number) => {
         if (index % 2 === 0) {
-          pathDescriptionList.push(element);
-        } else {
           urlList.push(element);
+        } else {
+          pathDescriptionList.push(element);
         }
       });
+
+      console.log("This is the urlList: ", urlList);
+      console.log("This is the pathDescriptionList: ", pathDescriptionList);
+      console.log("break");
       // separate info into 2 lists
       setPathList(pathDescriptionList);
       setImageList(urlList);
-      console.log("successful allocation from StartEndForm");
-      console.log("This is the pathDescriptionList: ", pathDescriptionList);
-      console.log("This is the urlList: ", urlList);
-
-      // Store path in localStorage
-      localStorage.setItem("path", JSON.stringify(pathList)); //Stores path in local stroage to be used in output later
-      localStorage.setItem("image", JSON.stringify(imageList));
-
-      // Navigate to the Output page
-      router.push("/output");
     } catch (error) {
       console.error("Error submitting rooms:", error);
       setMessage("Error submitting rooms");

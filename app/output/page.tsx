@@ -6,6 +6,7 @@ import "./output.css";
 const Output: React.FC = () => {
   const [path, setPath] = useState<string[]>([]);
   const [img, setImg] = useState<string[]>([]);
+  // const [isInitialized, setIsInitialized] = useState<boolean>(false);
 
   useEffect(() => {
     const storedPath = localStorage.getItem("path");
@@ -15,8 +16,29 @@ const Output: React.FC = () => {
       setPath(JSON.parse(storedPath));
       setImg(JSON.parse(storedImagePath));
     }
-    console.log("success");
+    console.log("success at page output");
   }, []);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const storedPath = localStorage.getItem("path");
+  //     const storedImagePath = localStorage.getItem("image");
+
+  //     if (storedPath && storedImagePath) {
+  //       setPath(JSON.parse(storedPath));
+  //       setImg(JSON.parse(storedImagePath));
+  //       setIsInitialized(true);
+  //       clearInterval(interval);
+  //       console.log("successful output")
+  //     }
+  //   }, 100); // Check every 100ms
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  // if (!isInitialized) {
+  //   return <div>Loading...</div>; // Show a loading indicator while waiting for data
+  // }
 
   return (
     <main className="output-main">
