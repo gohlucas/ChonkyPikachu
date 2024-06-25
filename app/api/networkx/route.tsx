@@ -17,7 +17,8 @@ export async function GET(req: NextRequest) {
 
   try {
     const response = await axios.get(
-      `https://chonkypikachu.onrender.com/shortest_path`,
+      `https://chonky-pikachu-flask-ik20bsro8-lucas-projects-3fc7fbf0.vercel.app/shortest_path`,
+      // `https://chonkypikachu.onrender.com/shortest_path`,
       {
         params: { start, end },
       }
