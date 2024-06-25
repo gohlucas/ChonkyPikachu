@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const response = await axios.get(
-      `https://chonkypikachu.pythonanywhere.com/`,
+      `https://chonkypikachu.pythonanywhere.com/shortest_path`,
       // `https://chonkypikachu.onrender.com/shortest_path`,
       {
         params: { start, end },
