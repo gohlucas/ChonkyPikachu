@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
+// Collects information from url of GET request and sends it to the
+// server to get networkx to compute data and return it
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const start = searchParams.get("start");
   const end = searchParams.get("end");
-
-  console.log(`Incoming request with start=${start} and end=${end}`);
 
   if (!start || !end) {
     return NextResponse.json(
@@ -18,7 +18,6 @@ export async function GET(req: NextRequest) {
   try {
     const response = await axios.get(
       `https://chonkypikachu.pythonanywhere.com/shortest_path`,
-      // `https://chonkypikachu.onrender.com/shortest_path`,
       {
         params: { start, end },
       }

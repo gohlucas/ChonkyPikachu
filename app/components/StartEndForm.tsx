@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import axios from "axios"; //Make API request
+import axios from "axios";
 import { useRouter } from "next/navigation";
-import "./submitbutton.css"; //For styling
+import "./submitbutton.css";
 
-//Structure for Room and PathDetail
+// Declaration of variable types
 type Room = {
   BuildingID: number;
   RoomID: number;
@@ -12,20 +12,22 @@ type Room = {
   RoomNumber: string;
 };
 
+// Functional Component to process user input
 const StartEndForm: React.FC = () => {
-  const [rooms, setRooms] = useState<Room[]>([]); //Holds list of rooms fetched. Inital state is just empty room variable
-  const [startRoom, setStartRoom] = useState<string>(""); //Stores selected start and end room
+  const [rooms, setRooms] = useState<Room[]>([]);
+  const [startRoom, setStartRoom] = useState<string>("");
   const [endRoom, setEndRoom] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [imageList, setImageList] = useState<string[]>([]);
   const [pathList, setPathList] = useState<string[]>([]);
-  const [path, setPath] = useState<string[]>([]);
+
   const router = useRouter();
 
+  // Push changes to localStorage upon change of variable state
   useEffect(() => {
     if (pathList.length > 0 && imageList.length > 0) {
       // Store path in localStorage
-      localStorage.setItem("path", JSON.stringify(pathList)); //Stores path in local stroage to be used in output later
+      localStorage.setItem("path", JSON.stringify(pathList));
       localStorage.setItem("image", JSON.stringify(imageList));
       console.log("This is the pathList: ", pathList);
       console.log("This is the imageList: ", imageList);
@@ -34,17 +36,18 @@ const StartEndForm: React.FC = () => {
     }
   }, [pathList, imageList]);
 
+  // Pull list of rooms from MySQL db for users to select from
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get<Room[]>("/api/rooms"); //HTTP GET Request, Fetch response from /api/rooms which queries database
-        setRooms(response.data); //Sets room
+        // Call on api to fetch response which queries database
+        const response = await axios.get<Room[]>("/api/rooms");
+        setRooms(response.data);
       } catch (error) {
         console.error("Error fetching rooms:", error);
       }
     };
-
-    fetchRooms(); //Actual call
+    fetchRooms();
   }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -61,22 +64,23 @@ const StartEndForm: React.FC = () => {
     }
 
     try {
+      // Feeds user input to api to retrieve path
       const response = await fetch(
         `/api/networkx?start=${startRoom}&end=${endRoom}`
-      ); //Runs Networkx
+      );
       const data = await response.json();
       setMessage("Rooms selected successfully!");
 
       const path_temp = data;
       console.log("raw data for path: ", path_temp);
-      // console.log("stored data for path: ", path);
-      // path is a list taken from networkx containing the description of path to take and the corresponding image to show user
-      // ["path1", "urlforimg1", "path2"...]
+
+      // Declare variable types
       const pathDescriptionList: string[] = [];
       const urlList: string[] = [];
 
+      // path is a list taken from networkx containing the description of path to take and the corresponding image to show user
+      // ["urlforimg1", "path1", "urlforimg2", "path2"...]
       path_temp.forEach((element: string, index: number) => {
-        // path.forEach((element: string, index: number) => {
         if (index % 2 === 0) {
           urlList.push(element);
         } else {
@@ -97,7 +101,7 @@ const StartEndForm: React.FC = () => {
   };
 
   return (
-    //Structure of the page
+    // Listens for user activity and changes the room value accordingly
     <div className="center-container">
       <h1>Select Start and End Rooms</h1>
       <div className="form-container">
@@ -145,27 +149,6 @@ const StartEndForm: React.FC = () => {
             Navigate!
           </button>
         </form>
-        {/* {pathDetails.length > 0 && (
-          <div>
-            {pathDetails.map((detail) => (  //Iterate items in array
-              <div key={detail.PathID}>
-                <h2>Step {detail.PathID}</h2>
-                <p>{detail.instruction}</p>
-                {detail.images.length > 0 && (
-                  <div>
-                    {detail.images.map((url, index) => (
-                      <img
-                        key={index}
-                        src={url}
-                        alt={`Step ${detail.PathID} Image ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )} */}
         <button className="page-link" onClick={() => router.back()}></button>
       </div>
     </div>

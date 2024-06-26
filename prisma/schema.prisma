@@ -10,17 +10,7 @@ datasource db {
 model Buildings {
   BuildingID   Int     @id(map: "PK__Building__5463CDE468A5D01F") @default(autoincrement())
   BuildingName String  @db.VarChar(100)
-  Paths        Paths[]
   Rooms        Rooms[]
-}
-
-model Paths {
-  PathID          Int       @id(map: "PK__Paths__CD67DC398ED66A98") @default(autoincrement())
-  BuildingID      Int
-  RoomNumber      String?   @db.Text
-  RoomName        String?   @db.Text
-  PathDescription String?   @db.Text
-  Buildings       Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Paths__BuildingI__787EE5A0")
 }
 
 model Rooms {
@@ -30,18 +20,4 @@ model Rooms {
   RoomNumber String?   @db.Text
   RoomName   String    @db.VarChar(100)
   Buildings  Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Rooms__BuildingI__75A278F5")
-}
-
-model PathImages {
-  ImageID  Int     @id(map: "PK__PathImag__7516F4EC1934F0A4")
-  PathID   Int?
-  ImageURL String? @db.VarChar(255)
-}
-
-model Nodes {
-  PathID          Int     @id(map: "PK__Nodes__CD67DC39B4B36C9E") @default(autoincrement())
-  FromNodeID      String? @db.VarChar(255)
-  ToNodeID        String? @db.VarChar(255)
-  PathDescription String? @db.Text
-  Image           String? @db.Text
 }
