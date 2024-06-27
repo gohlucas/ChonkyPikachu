@@ -555,7 +555,7 @@ if __name__ == "__main__":
 # nx.draw(G, with_labels=True)
 
 # #Testing
-# shortest_path = nx.shortest_path(G, source="B-02", target="B-13")
+# shortest_path = nx.shortest_path(G, source="B-03", target="01-22")
 # print("Shortest path:", shortest_path)
 # shortest_path_attributes = []
 # for i in range(len(shortest_path) - 1):
