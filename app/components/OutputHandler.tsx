@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./submitbutton.css";
 
 // declare type of variables
 interface OutputProps {
@@ -24,22 +25,27 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
 
   return (
     <div>
-      <img
-        src={imageUrls[currentIndex]}
-        alt={"error, image could not load"}
-        style={{ width: "100%", height: "auto" }}
-      />
-      <p>{description[currentIndex]}</p>
-      <div>
-        <button onClick={prevImage} disabled={currentIndex === 0}>
-          Back
-        </button>
-        <button
-          onClick={nextImage}
-          disabled={currentIndex === imageUrls.length - 1}
-        >
-          Next
-        </button>
+      <div className="test-overall-container">
+        <div className="test-container">
+          <p className="text-output">{description[currentIndex]}</p>
+          <button
+            className="prev-item"
+            onClick={prevImage}
+            disabled={currentIndex === 0}
+          ></button>
+        </div>
+        <div className="test-container2">
+          <img
+            src={imageUrls[currentIndex]}
+            alt={"error, image could not load"}
+            className="image-output"
+          />
+          <button
+            className="next-item"
+            onClick={nextImage}
+            disabled={currentIndex === imageUrls.length - 1}
+          ></button>
+        </div>
       </div>
     </div>
   );

@@ -74,3 +74,61 @@ h1, h2 {
   font-weight: bold;
   text-align: center;
 }
+
+.next-item {
+  /* display: flex; */
+  margin-left: 5%;
+  align-items: end;
+  width: 600px; 
+  height: 200px; 
+  background-image: url('./NextButton.png'); 
+  background-size: 160%;
+  background-position: right;
+  background-color: transparent;
+  border-color: transparent;
+  /* background-color: purple; */
+}
+
+.prev-item {
+  margin-top: 24%;
+  width: 600px; 
+  height: 200px; 
+  background-image: url('./PreviousButton.png'); 
+  background-size: 160%;
+  background-position: right;
+  background-color: transparent;
+  border-color: transparent;
+  /* background-color: aqua; */
+}
+
+.text-output {
+  margin-top: 50%;
+  color: black;
+  /* background: lightsalmon; */
+  background-color: transparent;
+  font-weight: bold;
+  text-align: center;
+}
+
+.image-output {
+  width: 400px;
+  height: 400px;
+}
+
+.test-overall-container {
+  display: flex;
+  justify-content: space-around;
+}
+.test-container {
+  /* background-color: greenyellow; */
+  background-color: transparent;
+  width: 500px;
+  height: 600px;
+}
+
+.test-container2 {
+  /* background-color: orange; */
+  background-color: transparent;
+  width: 500px;
+  height: 600px;
+}
