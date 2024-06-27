@@ -31,5 +31,6 @@ def shortest_path():
         return jsonify({'error': 'No path found'}), 400
 
     return jsonify(path)
+
 if __name__ == "__main__":
     app.run(debug=True)
