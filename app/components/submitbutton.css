@@ -1,3 +1,8 @@
+:root {
+  --vw: 100%;
+  --vh: 100%;
+}
+
 .button {
   background-image: url('./PreSubmitButton.png'); 
   background-repeat: no-repeat;
@@ -76,11 +81,11 @@ h1, h2 {
 }
 
 .next-item {
-  /* display: flex; */
-  margin-left: 5%;
-  align-items: end;
-  width: 600px; 
-  height: 200px; 
+  margin-left: 4vw;
+  width: 40vw; 
+  max-width: 100%;
+  height: 13vw;
+  max-height: 80%;  
   background-image: url('./NextButton.png'); 
   background-size: 160%;
   background-position: right;
@@ -90,9 +95,10 @@ h1, h2 {
 }
 
 .prev-item {
-  margin-top: 24%;
-  width: 600px; 
-  height: 200px; 
+  width: 40vw; 
+  max-width: 100%;
+  height: 13vw;
+  max-height: 80%; 
   background-image: url('./PreviousButton.png'); 
   background-size: 160%;
   background-position: right;
@@ -102,7 +108,8 @@ h1, h2 {
 }
 
 .text-output {
-  margin-top: 50%;
+margin-top: 10vw;
+padding: 20px;
   color: black;
   /* background: lightsalmon; */
   background-color: transparent;
@@ -111,25 +118,39 @@ h1, h2 {
 }
 
 .image-output {
-  width: 400px;
-  height: 400px;
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  justify-content: left;
 }
 
 .test-overall-container {
   display: flex;
-  margin-right: 17%;
+  /* background-color: darkgreen; */
+  flex-wrap: wrap;
+  margin-right: 20vw;
+  margin-top: -2vw;
   justify-content: space-around;
 }
-.test-container {
+
+.test-container, .test-container2 {
   /* background-color: greenyellow; */
-  background-color: transparent;
-  width: 500px;
-  height: 600px;
+  flex: 1 1 45%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin:10px;
+  box-sizing: border-box;
 }
 
-.test-container2 {
-  /* background-color: orange; */
-  background-color: transparent;
-  width: 500px;
-  height: 600px;
+.test-container3 {
+  display: flex;
+  /* background-color: greenyellow; */
+  flex-basis: 100%;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin:10px;
+  box-sizing: border-box;
 }
