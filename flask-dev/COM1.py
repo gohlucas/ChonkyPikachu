@@ -81,31 +81,31 @@ G.add_edge("B-C7", "B-14B", path="Your destination is along this corridor", imag
 G.add_edge("B-C8", "B-01-1", path="Your destination is along this corridor", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
 G.add_edge("B-C8", "B-08-1", path="Your destination is along this corridor", image="https://i.imghippo.com/files/OvufT1719495087.jpg") 
 #Corridor link
-G.add_edge("B-C1", "B-C3", path="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("B-C1", "B-C8", path="Head straight", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("B-C3", "B-C2", path="Turn left at the first turn", image="https://i.imghippo.com/files/CFlpn1719228194.jpg") #To take photo
-G.add_edge("B-C3", "B-C8", path="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("B-C1", "B-C3", path="Turn left", image="https://i.imghippo.com/files/GqDSp1719585341.jpg") 
+G.add_edge("B-C1", "B-C8", path="Head straight", image="https://i.imghippo.com/files/GqDSp1719585341.jpg") 
+G.add_edge("B-C3", "B-C2", path="Turn left at the first turn", image="https://i.imghippo.com/files/w6yoH1719585493.jpg") 
+G.add_edge("B-C3", "B-C8", path="Turn left", image="https://i.imghippo.com/files/BBRF81719585550.jpg")
 G.add_edge("B-C4", "B-C5", path="Turn right", image="https://i.imghippo.com/files/Zq81K1719228229.jpg")
 G.add_edge("B-C4", "B-C6", path="Turn left", image="https://i.imghippo.com/files/zw0AX1719228255.jpg")
-G.add_edge("B-C6", "B-C7", path = "Turn right", image="https://i.imghippo.com/files/xb9Wh1719228346.jpg")
-G.add_edge("B-C8", "B-C4", path="Turn right", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("B-C8", "B-C6", path="Head straight", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("B-C6", "B-C7", path = "Enter the door beside the staircase", image="https://i.imghippo.com/files/BcvUl1719586127.jpg")
+G.add_edge("B-C8", "B-C4", path="Turn right", image="https://i.imghippo.com/files/w6RJA1719585651.jpg")
+G.add_edge("B-C8", "B-C6", path="Head straight", image="https://i.imghippo.com/files/w6RJA1719585651.jpg") 
 #Reverse Corridor link
-G.add_edge("B-C3", "B-C1", path="Turn right", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("B-C3", "B-C1", path="Turn right", image="https://i.imghippo.com/files/BBRF81719585550.jpg")
 G.add_edge("B-C8", "B-C1", path="Head straight", image="https://i.imghippo.com/files/KLbao1719228106.jpg")
-G.add_edge("B-C2", "B-C3", path="Head straight", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("B-C2", "B-C3", path="Turn right", image="https://i.imghippo.com/files/JjfRk1719585595.jpg")
 G.add_edge("B-C8", "B-C3", path="Turn right", image="https://i.imghippo.com/files/KLbao1719228106.jpg")
 G.add_edge("B-C5", "B-C4", path="Turn left", image="https://i.imghippo.com/files/XtapY1719228286.jpg")
 G.add_edge("B-C6", "B-C4", path="Turn right", image="https://i.imghippo.com/files/GaSET1719228399.jpg")
-G.add_edge("B-C7", "B-C6", path="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("B-C7", "B-C6", path="Exit to this corridor", image="https://i.imghippo.com/files/JursU1719585726.jpg") 
 G.add_edge("B-C4", "B-C8", path="Turn right", image="https://i.imghippo.com/files/zw0AX1719228255.jpg")
 G.add_edge("B-C6", "B-C8", path="Head straight", image="https://i.imghippo.com/files/GaSET1719228399.jpg")
 #Staircase link
 G.add_edge("B-C1", "Staircase 3", path="Turn left and head up the stairs", image="https://i.imghippo.com/files/5edok1719228437.jpg") 
-G.add_edge("B-C6", "Staircase 1", path="Turn right and head up the stairs", image="https://i.imghippo.com/files/xb9Wh1719228346.jpg")
+G.add_edge("B-C6", "Staircase 1", path="Turn right and head up the stairs", image="https://i.imghippo.com/files/BcvUl1719586127.jpg")
 #Reverse Staircase link
-G.add_edge("Staircase 3", "B-C1", path="Turn right", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("Staircase 1", "B-C6", path="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("Staircase 3", "B-C1", path="Turn right", image="https://i.imghippo.com/files/OfAeU1719585837.jpg") 
+G.add_edge("Staircase 1", "B-C6", path="Turn left", image="https://i.imghippo.com/files/byRvY1719585783.jpg")
 #Room to Room
 G.add_edge("B-01-2", "B-02", path="Turn left and walk straight, the room is on the left", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
 G.add_edge("B-01-2", "B-03", path="Turn left and walk straight, the room is on the right", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
@@ -243,9 +243,9 @@ G.add_edge("01-C12", "01-16", path="Your destination is along this corridor", im
 G.add_edge("01-C13", "01-23", path="Your destination is along this corridor", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
 G.add_edge("01-C14", "01-24", path="Your destination is along this corridor", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
 #Corridor Link
-G.add_edge("01-C1", "01-C3", path="Turn right", image="https://i.imghippo.com/files/VDViy1719228612.jpg")
-G.add_edge("01-C1", "01-C14", path="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("01-C2", "01-C3", path="Turn right", image="https://i.imghippo.com/files/VTzqW1719228743.jpg")
+G.add_edge("01-C1", "01-C3", path="Turn right", image="https://i.imghippo.com/files/M6GSr1719584558.jpg")
+G.add_edge("01-C1", "01-C14", path="Turn left", image="https://i.imghippo.com/files/OsHvG1719584648.jpg") 
+G.add_edge("01-C2", "01-C3", path="Turn left", image="https://i.imghippo.com/files/VTzqW1719228743.jpg")
 G.add_edge("01-C2", "01-C1", path="Head straight", image="https://i.imghippo.com/files/VTzqW1719228743.jpg")
 G.add_edge("01-C3", "01-C4", path="Head straight", image="https://i.imghippo.com/files/SGwXr1719228825.jpg")
 G.add_edge("01-C3", "01-C6", path="Turn right", image="https://i.imghippo.com/files/SGwXr1719228825.jpg")
@@ -253,7 +253,7 @@ G.add_edge("01-C4", "01-C5", path="Turn left", image="https://i.imghippo.com/fil
 G.add_edge("01-C4", "01-C6", path="Turn left", image="https://i.imghippo.com/files/EhNS61719228900.jpg")
 G.add_edge("01-C6", "01-C7", path="Turn right", image="https://i.imghippo.com/files/RaGJz1719229024.jpg")
 G.add_edge("01-C6", "01-C8", path="Head straight", image="https://i.imghippo.com/files/RaGJz1719229024.jpg")
-G.add_edge("01-C7", "01-C8", path="Turn right", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("01-C7", "01-C8", path="Turn right", image="https://i.imghippo.com/files/yyhfV1719585088.jpg")
 G.add_edge("01-C8", "01-C9", path="Turn left", image="https://i.imghippo.com/files/jkFRT1719229100.jpg")
 G.add_edge("01-C8", "01-C12", path="Head straight", image="https://i.imghippo.com/files/jkFRT1719229100.jpg")
 G.add_edge("01-C9", "01-C10", path="Turn left", image="https://i.imghippo.com/files/uzscp1719229206.jpg")
@@ -261,41 +261,41 @@ G.add_edge("01-C9", "01-C12", path="Turn left", image="https://i.imghippo.com/fi
 G.add_edge("01-C10", "01-C11", path="Turn left", image="https://i.imghippo.com/files/3JWfn1719229276.jpg")
 G.add_edge("01-C12", "01-C13", path="Turn left", image="https://i.imghippo.com/files/Y10Kb1719229325.jpg")
 G.add_edge("01-C12", "01-C14", path="Turn right", image="https://i.imghippo.com/files/Y10Kb1719229325.jpg")
-G.add_edge("01-C13", "01-C14", path="Head straight", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("01-C13", "01-C14", path="Head straight", image="https://i.imghippo.com/files/1pB4P1719584757.jpg") 
 #Reverse Corridor Link
-G.add_edge("01-C3", "01-C1", path="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("01-C3", "01-C1", path="Turn left", image="https://i.imghippo.com/files/1E6Nf1719585253.jpg") 
 G.add_edge("01-C14", "01-C1", path="Turn right", image="https://i.imghippo.com/files/AOp4M1719229465.jpg")
-G.add_edge("01-C3", "01-C2", path="Turn right", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("01-C1", "01-C2", path="Head straight", image="https://i.imghippo.com/files/VDViy1719228612.jpg")
+G.add_edge("01-C3", "01-C2", path="Turn right", image="https://i.imghippo.com/files/1E6Nf1719585253.jpg")
+G.add_edge("01-C1", "01-C2", path="Head straight", image="https://i.imghippo.com/files/M6GSr1719584558.jpg")
 G.add_edge("01-C4", "01-C3", path="Head straight", image="https://i.imghippo.com/files/EhNS61719228900.jpg")
 G.add_edge("01-C6", "01-C3", path="Turn left", image="https://i.imghippo.com/files/RoRZr1719229057.jpg")
 G.add_edge("01-C5", "01-C4", path="Turn right", image="https://i.imghippo.com/files/xnRzP1719228937.jpg")
 G.add_edge("01-C6", "01-C4", path="Turn right", image="https://i.imghippo.com/files/RoRZr1719229057.jpg")
-G.add_edge("01-C7", "01-C6", path="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("01-C8", "01-C6", path="Head straight", image="https://i.imghippo.com/files/vo2sn1719229142.jpg")
-G.add_edge("01-C8", "01-C7", path="Turn left", image="https://i.imghippo.com/files/vo2sn1719229142.jpg")
+G.add_edge("01-C7", "01-C6", path="Turn left", image="https://i.imghippo.com/files/yyhfV1719585088.jpg")
+G.add_edge("01-C8", "01-C6", path="Head straight and turn left at the corkboard, and turn right", image="https://i.imghippo.com/files/kBEen1719585000.jpg")
+G.add_edge("01-C8", "01-C7", path="Turn left", image="https://i.imghippo.com/files/kBEen1719585000.jpg")
 G.add_edge("01-C9", "01-C8", path="Turn right", image="https://i.imghippo.com/files/ul0651719229239.jpg")
-G.add_edge("01-C10", "01-C9", path="Turn right", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("01-C10", "01-C9", path="Turn right", image="https://i.imghippo.com/files/D7sOY1719584909.jpg") 
 G.add_edge("01-C12", "01-C8", path="Head straight", image="https://i.imghippo.com/files/BT2ay1719229362.jpg")
 G.add_edge("01-C12", "01-C9", path="Turn right", image="https://i.imghippo.com/files/BT2ay1719229362.jpg")
 G.add_edge("01-C11", "01-C10", path="Turn right", image="https://i.imghippo.com/files/osfnY1719229303.jpg")
-G.add_edge("01-C13", "01-C12", path="Turn right", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("01-C14", "01-C12", path="Turn left", image="https://i.imghippo.com/files/B0mOs1719229431.jpg")
-G.add_edge("01-C14", "01-C13", path="Head straight", image="https://i.imghippo.com/files/B0mOs1719229431.jpg")
+G.add_edge("01-C13", "01-C12", path="Turn right", image="https://i.imghippo.com/files/1pB4P1719584757.jpg")
+G.add_edge("01-C14", "01-C12", path="Turn left", image="https://i.imghippo.com/files/LSjar1719584482.jpg")
+G.add_edge("01-C14", "01-C13", path="Head straight", image="https://i.imghippo.com/files/LSjar1719584482.jpg")
 #Staircase Link
-G.add_edge("01-C1", "Staircase 1", path="Head straight, head down the staircase on the right", image="https://i.imghippo.com/files/OoaeF1719228548.jpg")
-G.add_edge("01-C14", "Staircase 1", path="Turn left, head down the staircase on the right", image="https://i.imghippo.com/files/OoaeF1719228548.jpg")
+G.add_edge("01-C1", "Staircase 1", path="Head straight, head down the staircase on the right", image="https://i.imghippo.com/files/OsHvG1719584648.jpg")
+G.add_edge("01-C14", "Staircase 1", path="Turn left, head down the staircase on the right", image="https://i.imghippo.com/files/prpjj1719586476.jpg")
 G.add_edge("01-C9", "Staircase 2", path="Head straight, the staircase is on the right", image="https://i.imghippo.com/files/uzscp1719229206.jpg")
-G.add_edge("01-C10", "Staircase 2", path="Head straight, the staircase is straight ahead", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("01-C10", "Staircase 2", path="Head straight, the staircase is straight ahead", image="https://i.imghippo.com/files/D7sOY1719584909.jpg") 
 G.add_edge("01-C2", "Staircase 3", path="Head straight, head down the staircase on the left", image="https://i.imghippo.com/files/vLqhV1719228780.jpg")
 G.add_edge("01-C13", "Staircase 4", path="Exit to the lobby, the staircase is on the right", image="https://i.imghippo.com/files/ulHML1719229779.jpg") 
 #Reverse Staircase Link
-G.add_edge("Staircase 1", "01-C1", path="Turn left and head straight", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("Staircase 1", "01-C14", path="Turn left and turn right at the junction", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("Staircase 2", "01-C9", path="Head straight and turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("Staircase 2", "01-C10", path="Head straight", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("Staircase 1", "01-C1", path="Turn left and head straight", image="https://i.imghippo.com/files/LADra1719584715.jpg") 
+G.add_edge("Staircase 1", "01-C14", path="Turn left and turn right at the junction", image="https://i.imghippo.com/files/LADra1719584715.jpg") 
+G.add_edge("Staircase 2", "01-C9", path="Head straight and turn left", image="https://i.imghippo.com/files/UkQ8V1719584848.jpg") 
+G.add_edge("Staircase 2", "01-C10", path="Head straight", image="https://i.imghippo.com/files/UkQ8V1719584848.jpg") 
 G.add_edge("Staircase 3", "01-C2", path="Turn right", image="https://i.imghippo.com/files/kTtkj1719229913.jpg")
-G.add_edge("Staircase 4", "01-C13", path="Turn Left and head through the door", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("Staircase 4", "01-C13", path="Turn Left and head through the door", image="https://i.imghippo.com/files/HM9xn1719641858.jpg")
 # #Room to Room
 G.add_edge("01-07", "01-08-1", path="Turn left, the room is on the left", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
 G.add_edge("01-07", "01-11-1", path="Turn left and walk straight, the room is on the right", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
@@ -387,7 +387,6 @@ G.add_node("02-21") # Student's Lounge
 # G.add_node("Staircase 4") added alr
 # G.add_node("Lift")
 G.add_node("Cerebro Glass Door") # As stated
-G.add_node("SR3 Glass Door") # As stated
 
 # Edge adding between corridor and room
 G.add_edge("02-01","02-C1", path = "Walk straight till you see this corridor", image="https://i.imghippo.com/files/JXs851719414208.png")
@@ -432,46 +431,44 @@ G.add_edge("02-C8","02-21", path = "Walk straight, the room is on right", image=
 G.add_edge("02-C9","02-14", path = "Your destination is along this corridor", image="https://i.imghippo.com/files/OvufT1719495087.jpg")
 
 #Edge adding between corridors:
-G.add_edge("02-C1","02-C2", path ="Turn right, then turn left", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C1","02-C3", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C2","02-C1", path ="Turn left", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C2","02-C3", path ="Turn right", image="https://i.imghippo.com/files/JXs851719414208.png")
+G.add_edge("02-C1","02-C2", path ="Walk to the benches past the blue pillar", image="https://i.imghippo.com/files/LK1XC1719642309.jpg")
+G.add_edge("02-C1","02-C3", path ="Walk straight towards the green wall", image="https://i.imghippo.com/files/8piYl1719642515.jpg")
+G.add_edge("02-C2","02-C1", path ="Turn left after passing the blue pillar", image="https://i.imghippo.com/files/0uIbS1719652818.jpg")
+G.add_edge("02-C2","02-C3", path ="Turn right and head towards the vending machine", image="https://i.imghippo.com/files/822ab1719642486.jpg")
 G.add_edge("02-C2","Cerebro Glass Door", path ="Walk straight pass the door", image="https://i.imghippo.com/files/soRwz1719230137.jpg")
-G.add_edge("Cerebro Glass Door", "02-C2", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("Cerebro Glass Door","02-C4", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
+G.add_edge("Cerebro Glass Door", "02-C2", path ="Walk straight", image="https://i.imghippo.com/files/crdbZ1719642382.jpg")
+G.add_edge("Cerebro Glass Door","02-C4", path ="Walk straight", image="https://i.imghippo.com/files/o7y6z1719642639.jpg")
 G.add_edge("02-C4", "Cerebro Glass Door", path ="Walk straight pass the door", image="https://i.imghippo.com/files/qLqVC1719230080.jpg")
-G.add_edge("Cerebro Glass Door","02-C5", path ="Turn right", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C5","Cerebro Glass Door", path ="Turn left and walk pass the door", image="https://i.imghippo.com/files/qLqVC1719230080.jpg")
-G.add_edge("02-C3","02-C1", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C3","02-C2", path ="Turn right", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C3","Cerebro Glass Door", path ="Turn left and walk pass the door", image="https://i.imghippo.com/files/soRwz1719230137.jpg")
-G.add_edge("Cerebro Glass Door", "02-C3", path ="Turn right", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C4","02-C5", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C4","SR3 Glass Door", path ="Turn left and walk pass the door", image="https://i.imghippo.com/files/P6r541719230289.jpg")
-G.add_edge("SR3 Glass Door", "02-C4", path ="Turn right", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("SR3 Glass Door","02-C6", path ="Turn right", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C4","02-C7", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C5","02-C4", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C5","02-C7", path ="Turn right", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C5","02-C8", path ="Walk straight", image="https://i.imghippo.com/files/FfVm81719230388.jpg") #Photo of Cerebro to Com Club Student Room 
-G.add_edge("02-C6", "SR3 Glass Door", path="Walk pass this glass door, turn left and walk pass the door", image="https://i.imghippo.com/files/dqFic1719230168.jpg")
-G.add_edge("SR3 Glass Door","02-C7", path ="Head straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C6","02-C9", path ="Turn right", image="https://i.imghippo.com/files/oX5Rr1719230234.jpg")
-G.add_edge("02-C7","02-C4", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C7","02-C5", path ="Walk straight", image="https://i.imghippo.com/files/JXs851719414208.png")
-G.add_edge("02-C7","SR3 Glass Door", path ="Walk straight pass the door", image="https://i.imghippo.com/files/P6r541719230289.jpg")
-G.add_edge("02-C7","02-C8", path ="Turn left", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
-G.add_edge("02-C8","02-C5", path ="Walk straight", image="https://i.imghippo.com/files/lAOxw1719230332.jpg")
+G.add_edge("Cerebro Glass Door","02-C5", path ="Turn right and head down the slope", image="https://i.imghippo.com/files/QTktp1719583924.jpg")
+G.add_edge("02-C5","Cerebro Glass Door", path ="Head up the slope and walk pass the door on the left", image="https://i.imghippo.com/files/N558w1719583973.jpg")
+G.add_edge("02-C3","02-C1", path ="Walk straight", image="https://i.imghippo.com/files/tCUMF1719642550.jpg")
+G.add_edge("02-C3","02-C2", path ="Walk straight to the door", image="https://i.imghippo.com/files/S2vhg1719642575.jpg")
+G.add_edge("02-C3","Cerebro Glass Door", path ="Turn left and walk pass the door", image="https://i.imghippo.com/files/NFzk61719584131.jpg")
+G.add_edge("Cerebro Glass Door", "02-C3", path ="Walk towards the MBS painting and turn right", image="https://i.imghippo.com/files/m2erH1719642330.jpg")
+G.add_edge("02-C4","02-C5", path ="Walk straight down the slope", image="https://i.imghippo.com/files/QTktp1719583924.jpg")
+G.add_edge("02-C4","02-C6", path ="Turn left and  then turn right to walk pass the door", image="https://i.imghippo.com/files/Uvg9n1719583803.jpg")
+G.add_edge("02-C6", "02-C4", path ="Walk past the door, turn left then right", image="https://i.imghippo.com/files/9sQxb1719586822.jpg")
+G.add_edge("02-C4","02-C7", path ="Walk straight to the lockers ahead", image="https://i.imghippo.com/files/CCEOi1719642670.jpg")
+G.add_edge("02-C5","02-C4", path ="Walk straight and turn right", image="https://i.imghippo.com/files/N558w1719583973.jpg")
+G.add_edge("02-C5","02-C7", path ="Walk past the yellow pillar and turn left", image="https://i.imghippo.com/files/OoUsE1719642742.jpg")
+G.add_edge("02-C5","02-C8", path ="Walk straight", image="https://i.imghippo.com/files/C4pL31719584060.jpg")
+G.add_edge("02-C6","02-C7", path ="Walk past the glass door, turn left and head straight", image="https://i.imghippo.com/files/pO6Tn1719583650.jpg")
+G.add_edge("02-C6","02-C9", path ="Turn right at the end of the corridor", image="https://i.imghippo.com/files/oX5Rr1719230234.jpg")
+G.add_edge("02-C7","02-C4", path ="Walk straight", image="https://i.imghippo.com/files/AfoiD1719642708.jpg")
+G.add_edge("02-C7","02-C5", path ="Walk past the yellow pillar, turn right and head straight", image="https://i.imghippo.com/files/eIWNL1719642775.jpg")
+G.add_edge("02-C7","02-C6", path ="Walk straight pass the glass door on the right", image="https://i.imghippo.com/files/P6r541719230289.jpg")
+G.add_edge("02-C7","02-C8", path ="Turn left", image="https://i.imghippo.com/files/qj4GY1719583560.jpg") 
+G.add_edge("02-C8","02-C5", path ="Walk straight towards the orange wall", image="https://i.imghippo.com/files/lAOxw1719230332.jpg")
 G.add_edge("02-C8","02-C7", path ="Turn right", image="https://i.imghippo.com/files/lAOxw1719230332.jpg")
 G.add_edge("02-C8","02-C9", path ="Turn left at the end of the corridor after exiting door", image="https://i.imghippo.com/files/FfVm81719230388.jpg")
-G.add_edge("02-C9","02-C6", path ="Turn left", image="https://i.imghippo.com/files/NfiBi1719230468.jpg")
-G.add_edge("02-C9","02-C8", path ="Turn right", image="https://i.imghippo.com/files/ZPbea1719230443.jpg")
+G.add_edge("02-C9","02-C6", path ="Turn left", image="https://i.imghippo.com/files/l7hFl1719583062.jpg")
+G.add_edge("02-C9","02-C8", path ="Turn right and pass through the door", image="https://i.imghippo.com/files/ZPbea1719230443.jpg")
 
 # Stairs to corridor
-G.add_edge("Staircase 4","02-C5", path = "Walk straight and turn left, walking pass the door", image="https://i.imghippo.com/files/qIpB41719230726.png") #blank, to fill
+G.add_edge("Staircase 4","02-C5", path = "Turn left to walk pass the door", image="https://i.imghippo.com/files/I0c4T1719584299.jpg") 
 
 # Reverse Stairs to corridor
-G.add_edge("02-C5","Staircase 4", path = "Walk straight pass the door and head down the staircase on the right", image="https://i.imghippo.com/files/Fcxl41719230492.jpg")
+G.add_edge("02-C5","Staircase 4", path = "Walk straight pass the door and head down the staircase on the right", image="https://i.imghippo.com/files/mq8Ql1719584261.jpg")
 
 # Room to Room 
 # Corridor 1
