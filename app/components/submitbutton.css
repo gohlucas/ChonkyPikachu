@@ -125,26 +125,27 @@ padding: 20px;
   justify-content: left;
 }
 
-.test-overall-container {
+.output-container {
   display: flex;
   /* background-color: darkgreen; */
   flex-wrap: wrap;
-  margin-right: 20vw;
+  margin-right: 17vw;
   margin-top: -2vw;
   justify-content: space-around;
 }
 
-.test-container, .test-container2 {
+.sub-container, .sub-container2 {
   /* background-color: greenyellow; */
   flex: 1 1 45%;
   width: 100%;
   max-width: 500px;
   height: auto;
   margin:10px;
+  margin-left: 2vw;
   box-sizing: border-box;
 }
 
-.test-container3 {
+.sub-container3 {
   display: flex;
   /* background-color: greenyellow; */
   flex-basis: 100%;
@@ -152,5 +153,6 @@ padding: 20px;
   max-width: 1000px;
   height: auto;
   margin:10px;
+  margin-left: 2vw;
   box-sizing: border-box;
 }

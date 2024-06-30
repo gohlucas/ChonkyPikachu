@@ -25,11 +25,11 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
 
   return (
     <div>
-      <div className="test-overall-container">
-        <div className="test-container">
+      <div className="output-container">
+        <div className="sub-container">
           <p className="text-output">{description[currentIndex]}</p>
         </div>
-        <div className="test-container2">
+        <div className="sub-container2">
           <img
             src={imageUrls[currentIndex]}
             alt={"error, image could not load"}
@@ -37,7 +37,7 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
           />
         </div>
 
-        <div className="test-container3">
+        <div className="sub-container3">
           <button
             className="prev-item"
             onClick={prevImage}

@@ -88,7 +88,7 @@ G.add_edge("B-C3", "B-C8", path="Turn left", image="https://i.imghippo.com/files
 G.add_edge("B-C4", "B-C5", path="Turn right", image="https://i.imghippo.com/files/Zq81K1719228229.jpg")
 G.add_edge("B-C4", "B-C6", path="Turn left", image="https://i.imghippo.com/files/zw0AX1719228255.jpg")
 G.add_edge("B-C6", "B-C7", path = "Enter the door beside the staircase", image="https://i.imghippo.com/files/BcvUl1719586127.jpg")
-G.add_edge("B-C8", "B-C4", path="Turn right", image="https://i.imghippo.com/files/w6RJA1719585651.jpg")
+G.add_edge("B-C8", "B-C4", path="Turn left", image="https://i.imghippo.com/files/w6RJA1719585651.jpg")
 G.add_edge("B-C8", "B-C6", path="Head straight", image="https://i.imghippo.com/files/w6RJA1719585651.jpg") 
 #Reverse Corridor link
 G.add_edge("B-C3", "B-C1", path="Turn right", image="https://i.imghippo.com/files/BBRF81719585550.jpg")
