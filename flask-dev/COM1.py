@@ -549,7 +549,7 @@ if __name__ == "__main__":
     pass
 
 
-# nx.draw(G, with_labels=True)
+nx.draw(G, with_labels=True)
 
 #Testing
 # print("Shortest path:", shortest_path)
@@ -561,6 +561,6 @@ if __name__ == "__main__":
 #     shortest_path_attributes.append(G[x][y]['image'])
 # print("Path of nodes in the shortest path:", shortest_path_attributes)
 
-# plt.show() 
+plt.show() 
 
 

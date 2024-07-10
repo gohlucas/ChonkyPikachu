@@ -3,14 +3,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import "./submitbutton.css";
+import Room from "./room";
 
-// Declaration of variable types
-type Room = {
-  BuildingID: number;
-  RoomID: number;
-  RoomName: string;
-  RoomNumber: string;
-};
+export async function fetchRooms() {
+  // Call on api to fetch response which queries database
+  const response = await axios.get<Room[]>("/api/rooms");
+  return response;
+}
+
+export async function fetchPath(startRoom: string, endRoom: string) {
+  // Feeds user input to api to retrieve path
+  const response = await fetch(
+    `/api/networkx?start=${startRoom}&end=${endRoom}`
+  );
+  return response;
+}
 
 // Functional Component to process user input
 const StartEndForm: React.FC = () => {
@@ -38,16 +45,16 @@ const StartEndForm: React.FC = () => {
 
   // Pull list of rooms from MySQL db for users to select from
   useEffect(() => {
-    const fetchRooms = async () => {
+    // Call on api to fetch response which queries database
+    const fetchRoomsAsync = async () => {
       try {
-        // Call on api to fetch response which queries database
-        const response = await axios.get<Room[]>("/api/rooms");
+        const response = await fetchRooms();
         setRooms(response.data);
       } catch (error) {
         console.error("Error fetching rooms:", error);
       }
     };
-    fetchRooms();
+    fetchRoomsAsync();
   }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -65,9 +72,7 @@ const StartEndForm: React.FC = () => {
 
     try {
       // Feeds user input to api to retrieve path
-      const response = await fetch(
-        `/api/networkx?start=${startRoom}&end=${endRoom}`
-      );
+      const response = await fetchPath(startRoom, endRoom);
       const data = await response.json();
       setMessage("Rooms selected successfully!");
 
