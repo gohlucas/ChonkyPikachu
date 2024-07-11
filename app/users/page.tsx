@@ -1,14 +1,25 @@
+"use client";
 import React from "react";
 import StartEndForm from "../components/StartEndForm";
+import { useRouter } from "next/navigation"; 
 import './mainpage.css'; //Styling
 
 const HomePage: React.FC = () => {
+  const router = useRouter();
+
+  const handleModelPageNavigation = () => {
+    router.push("/3DModelPage");
+  };
+
   return (
     <div className="page-container">
-      <div className="page-form"> 
+      <div className="page-form">
         <StartEndForm />
       </div>
-    </div> //Relies on StartEndForm componenet for styling and layout
+      <button onClick={handleModelPageNavigation} className="button">
+        View 3D Model
+      </button>
+    </div>
   );
 };
 
