@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -18,37 +18,33 @@ const ModelPage: React.FC = () => {
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    // Background COlour
     scene.background = new THREE.Color(0xffffff);
 
-    // Ambient light 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); 
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
     scene.add(ambientLight);
 
-    // Directional light 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1.8);
     directionalLight.position.set(0, 10, 0);
     scene.add(directionalLight);
 
     const loader = new GLTFLoader();
 
-    let currentModel: THREE.Group;
+    let currentModel: THREE.Group | undefined;
 
     const loadModel = (modelPath: string) => {
       if (currentModel) {
         scene.remove(currentModel);
       }
-      loader.load(modelPath, (gltf: THREE.GLTF) => {
-        currentModel = gltf.scene;
-        scene.add(gltf.scene);
+      loader.load(modelPath, (gltf) => {
+        currentModel = gltf.scene as THREE.Group;
+        scene.add(currentModel);
       });
     };
 
     loadModel(selectedModel);
 
-    
-    camera.position.set(7.3589, 6.9258, 4.9583); // x, y, z coordinates 
-    camera.rotation.set(63.55 * (Math.PI / 180), 0, 46.69 * (Math.PI / 180)); 
+    camera.position.set(7.3589, 6.9258, 4.9583);
+    camera.rotation.set(63.55 * (Math.PI / 180), 0, 46.69 * (Math.PI / 180));
 
     const animate = () => {
       requestAnimationFrame(animate);
