@@ -18,19 +18,17 @@ const ModelPage: React.FC = () => {
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    // Ambient light to ensure some light is always present
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8); 
+    // Background COlour
+    scene.background = new THREE.Color(0xffffff);
+
+    // Ambient light 
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); 
     scene.add(ambientLight);
 
-    // Directional light for strong illumination
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
-    directionalLight.position.set(10, 10, 10);
+    // Directional light 
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.8);
+    directionalLight.position.set(0, 10, 0);
     scene.add(directionalLight);
-
-    // Additional point light for extra illumination
-    const pointLight = new THREE.PointLight(0xffffff, 1.2, 100);
-    pointLight.position.set(10, 10, 10);
-    scene.add(pointLight);
 
     const loader = new GLTFLoader();
 
@@ -42,24 +40,15 @@ const ModelPage: React.FC = () => {
       }
       loader.load(modelPath, (gltf: THREE.GLTF) => {
         currentModel = gltf.scene;
-        currentModel.traverse((node) => {
-          if (node.isMesh) {
-            node.castShadow = false;
-            node.receiveShadow = false;
-            // Check for wall objects by name or other criteria
-            if (node.name.toLowerCase().includes('wall')) {
-              // Scale the wall mesh to make it thicker
-              node.scale.set(1.1, 1.1, 1.1); 
-            }
-          }
-        });
         scene.add(gltf.scene);
       });
     };
 
     loadModel(selectedModel);
 
-    camera.position.set(10, 10, 10); //x,y,z respectively
+    
+    camera.position.set(7.3589, 6.9258, 4.9583); // x, y, z coordinates 
+    camera.rotation.set(63.55 * (Math.PI / 180), 0, 46.69 * (Math.PI / 180)); 
 
     const animate = () => {
       requestAnimationFrame(animate);
