@@ -17,6 +17,11 @@ const ModelPage: React.FC = () => {
     document.body.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; 
+    controls.dampingFactor = 0.25; 
+    controls.screenSpacePanning = false; 
+    controls.minDistance = 2; 
+    controls.maxDistance = 50; 
 
     scene.background = new THREE.Color(0xffffff);
 
