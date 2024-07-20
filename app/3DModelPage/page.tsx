@@ -5,7 +5,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
 
 const ModelPage: React.FC = () => {
-  const [selectedModel, setSelectedModel] = useState('/COM1 Basement.glb');
+  const [selectedModel, setSelectedModel] = useState('/SoC_COM_1_Basement.glb');
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -70,9 +70,9 @@ const ModelPage: React.FC = () => {
   return (
     <div>
       <select onChange={(e) => setSelectedModel(e.target.value)} value={selectedModel}>
-        <option value="/COM1 Basement.glb">Basement</option>
-        <option value="/COM1 Level 1.glb">First Floor</option>
-        <option value="/COM1 Level 2.glb">Second Floor</option>
+        <option value="/SoC_COM_1_Basement.glb">Basement</option>
+        <option value="/SoC_COM_1_Level_1.glb">First Floor</option>
+        <option value="/SoC_COM_1_Level_2.glb">Second Floor</option>
       </select>
     </div>
   );
