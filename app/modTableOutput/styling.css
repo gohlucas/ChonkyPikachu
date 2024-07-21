@@ -1,0 +1,8 @@
+table {
+    border-collapse: separate;
+    border-spacing: 250px 0;
+  }
+
+  tr:hover {
+    background-color: yellow;
+}

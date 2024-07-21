@@ -1,7 +1,8 @@
 import { fetchRooms, fetchPath } from "../components/StartEndForm";
 // import { OutputHandler } from "../components/OutputHandler";
 import axios from 'axios';
-import Room from "../components/room";
+import { Room } from "../components/model";
+import { createYear } from "../components/ModLocation";
 
 jest.mock('axios');
 const axiosMock = axios as jest.Mocked<typeof axios>;

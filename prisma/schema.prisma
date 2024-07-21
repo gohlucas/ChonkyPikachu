@@ -21,3 +21,50 @@ model Rooms {
   RoomName   String    @db.VarChar(100)
   Buildings  Buildings @relation(fields: [BuildingID], references: [BuildingID], onUpdate: NoAction, map: "FK__Rooms__BuildingI__75A278F5")
 }
+
+model Lab {
+  Lab_ID    Int     @id(map: "PK__Lab__1EE6720FD5E6BEBC") @default(autoincrement())
+  Mod_ID    Int?
+  Name      String  @db.Text
+  Time      String  @db.Text
+  Venue     String  @db.VarChar(255)
+  Day       String  @default("Unfilled", map: "DF__Lab__Day__02FC7413") @db.VarChar(255)
+  Room_Name String? @db.VarChar(255)
+  Module    Module? @relation(fields: [Mod_ID], references: [Mod_ID], onDelete: NoAction, onUpdate: NoAction, map: "FK__Lab__Mod_ID__778AC167")
+}
+
+model Lecture {
+  Lecture_ID Int     @id(map: "PK__Lecture__551CCF79A15DA3C2") @default(autoincrement())
+  Mod_ID     Int?
+  Name       String  @db.Text
+  Time       String  @db.Text
+  Venue      String  @db.VarChar(255)
+  Day        String  @default("Unfilled", map: "DF__Lecture__Day__03F0984C") @db.VarChar(255)
+  Room_Name  String? @db.VarChar(255)
+  Module     Module? @relation(fields: [Mod_ID], references: [Mod_ID], onDelete: NoAction, onUpdate: NoAction, map: "FK__Lecture__Mod_ID__71D1E811")
+}
+
+model Module {
+  Mod_ID   Int        @id(map: "PK__Module__D5F2727BF879BD31") @default(autoincrement())
+  Mod_Name String     @db.Text
+  Lab      Lab[]
+  Lecture  Lecture[]
+  Tutorial Tutorial[]
+}
+
+model Tutorial {
+  Tutorial_ID Int     @id(map: "PK__Tutorial__449B0C97376357A2") @default(autoincrement())
+  Mod_ID      Int?
+  Name        String  @db.Text
+  Time        String  @db.Text
+  Venue       String  @db.VarChar(255)
+  Day         String  @default("Unfilled", map: "DF__Tutorial__Day__04E4BC85") @db.VarChar(255)
+  Room_Name   String? @db.VarChar(255)
+  Module      Module? @relation(fields: [Mod_ID], references: [Mod_ID], onDelete: NoAction, onUpdate: NoAction, map: "FK__Tutorial__Mod_ID__74AE54BC")
+}
+
+model test {
+  my_id    Int    @id(map: "PK__test__4930065295956678") @default(autoincrement())
+  my_name  String @db.VarChar(255)
+  my_venue String @db.VarChar(255)
+}

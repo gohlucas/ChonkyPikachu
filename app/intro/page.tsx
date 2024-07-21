@@ -11,6 +11,9 @@ const Home: React.FC = () => {
           <Link href="/users">
             <button className="button"></button>
           </Link>
+          <Link href="/modStuff">
+            <button>Click Here for Mod Stuff</button>
+          </Link>
         </div>
       </header>
     </main>

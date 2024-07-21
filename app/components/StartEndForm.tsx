@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import "./submitbutton.css";
-import Room from "./room";
+import { Room } from "./model";
 
 export async function fetchRooms() {
   // Call on api to fetch response which queries database

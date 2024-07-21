@@ -8,7 +8,6 @@ export async function GET(request: NextRequest) {
   try {
     // Queries rooms table to retrieve all records
     const rooms = await prisma.rooms.findMany();
-    console.log("from route ok");
     return NextResponse.json(rooms);
   } catch (error) {
     console.error("Error fetching rooms:", error);
