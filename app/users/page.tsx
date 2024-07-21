@@ -1,12 +1,9 @@
 "use client";
 import React from "react";
 import StartEndForm from "../components/StartEndForm";
-<<<<<<< HEAD
 import "./mainpage.css"; //Styling
-=======
-import { useRouter } from "next/navigation"; 
-import './mainpage.css'; //Styling
->>>>>>> e4b822f7b12e0ac35b8fea5e4549f5c31751f6aa
+import { useRouter } from "next/navigation";
+import "./mainpage.css"; //Styling
 
 const HomePage: React.FC = () => {
   const router = useRouter();
