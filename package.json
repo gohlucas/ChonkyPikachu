@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
+    "@types/three": "^0.166.0",
     "axios": "^1.7.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -22,7 +23,11 @@
     "next": "^14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+<<<<<<< HEAD
     "sweetalert2": "^11.12.3"
+=======
+    "three": "^0.166.1"
+>>>>>>> e4b822f7b12e0ac35b8fea5e4549f5c31751f6aa
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
