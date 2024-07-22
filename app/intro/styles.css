@@ -1,0 +1,40 @@
+.custom-color {
+    color: #000000; /* Custom color */
+  }
+  
+  .custom-font {
+    font-family: 'Helvetica', sans-serif; /* Custom font */
+  }
+  
+  .background {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-custom {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-text-color {
+    color: #fff; /* White text for buttons */
+  }
+  
+  .btn-custom {
+    background-color: #f0ad4e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .btn-custom:hover {
+    background-color: #ec971f;
+  }
+  
+  .lead-custom {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
