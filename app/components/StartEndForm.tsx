@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import "./submitbutton.css";
 import { Room } from "./model";
 
 export async function fetchRooms() {
@@ -107,9 +106,10 @@ const StartEndForm: React.FC = () => {
 
   return (
     // Listens for user activity and changes the room value accordingly
-    <div className="center-container">
+    // <div className="center-container">
+    <div>
       <h1>Select Start and End Rooms</h1>
-      <div className="form-container">
+      <div>
         <form onSubmit={handleSubmit}>
           <div className="label-container">
             <label>
@@ -130,7 +130,7 @@ const StartEndForm: React.FC = () => {
               </select>
             </label>
           </div>
-          <div className="label-container">
+          <div>
             <label>
               End Room:
               <select
@@ -149,12 +149,10 @@ const StartEndForm: React.FC = () => {
               </select>
             </label>
           </div>
-          {message && <p className="error-message">{message}</p>}
-          <button type="submit" className="button">
-            Navigate!
-          </button>
+          {message && <p>{message}</p>}
+          <button type="submit">Navigate!</button>
         </form>
-        <button className="page-link" onClick={() => router.back()}></button>
+        <button onClick={() => router.back()}>Back</button>
       </div>
     </div>
   );
