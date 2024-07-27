@@ -30,7 +30,7 @@ const Home: React.FC = () => {
             </Link>
             <Link href="/modStuff">
               <button className="btn btn-custom mx-2 button-text-color">
-                Click Here for Mod Stuff
+                Click Here for Module Selection
               </button>
             </Link>
             <Link href="/3DModelPage">
