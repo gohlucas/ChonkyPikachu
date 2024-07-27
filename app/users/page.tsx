@@ -17,9 +17,6 @@ const HomePage: React.FC = () => {
       <div className="page-form">
         <StartEndForm />
       </div>
-      <button onClick={handleModelPageNavigation} className="button">
-        View 3D Model
-      </button>
     </div>
   );
 };

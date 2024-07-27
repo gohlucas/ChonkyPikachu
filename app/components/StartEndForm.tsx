@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Room } from "./model";
+import "./styles.css";
 
 export async function fetchRooms() {
   // Call on api to fetch response which queries database
@@ -110,46 +111,49 @@ const StartEndForm: React.FC = () => {
     <div>
       <h1>Select Start and End Rooms</h1>
       <div>
-        <form onSubmit={handleSubmit}>
-          <div className="label-container">
-            <label>
-              Start Room:
-              <select
-                value={startRoom}
-                onChange={(e) => setStartRoom(e.target.value)}
-              >
-                <option value="">Select...</option>
-                {rooms.map((room) => (
-                  <option
-                    key={`start-${room.BuildingID}-${room.RoomID}`}
-                    value={room.RoomNumber}
-                  >
-                    {room.RoomName}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div>
-            <label>
-              End Room:
-              <select
-                value={endRoom}
-                onChange={(e) => setEndRoom(e.target.value)}
-              >
-                <option value="">Select...</option>
-                {rooms.map((room) => (
-                  <option
-                    key={`end-${room.BuildingID}-${room.RoomID}`}
-                    value={room.RoomNumber}
-                  >
-                    {room.RoomName}
-                  </option>
-                ))}
-              </select>
-            </label>
+        <form onSubmit={handleSubmit} className="form">
+          <div className="container">
+            {/* <div> */}
+            <label className="labelGrp">Start Room:</label>
+            <select
+              value={startRoom}
+              onChange={(e) => setStartRoom(e.target.value)}
+              className="selectGrp"
+            >
+              <option value="">Select...</option>
+              {rooms.map((room) => (
+                <option
+                  key={`start-${room.BuildingID}-${room.RoomID}`}
+                  value={room.RoomNumber}
+                >
+                  {room.RoomName}
+                </option>
+              ))}
+            </select>
+
+            {/* </div> */}
+            {/* <div> */}
+            <label className="labelGrp">End Room:</label>
+            <select
+              value={endRoom}
+              onChange={(e) => setEndRoom(e.target.value)}
+              className="selectGrp"
+            >
+              <option value="">Select...</option>
+              {rooms.map((room) => (
+                <option
+                  key={`end-${room.BuildingID}-${room.RoomID}`}
+                  value={room.RoomNumber}
+                >
+                  {room.RoomName}
+                </option>
+              ))}
+            </select>
+
+            {/* </div> */}
           </div>
           {message && <p>{message}</p>}
+          <br></br>
           <button type="submit">Navigate!</button>
         </form>
         <button onClick={() => router.back()}>Back</button>

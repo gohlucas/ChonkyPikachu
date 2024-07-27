@@ -89,7 +89,8 @@ h1, h2 {
   background-image: url('./NextButton.png'); 
   background-size: 160%;
   background-position: right;
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-color: purple;
   border-color: transparent;
   /* background-color: purple; */
 }
@@ -102,7 +103,8 @@ h1, h2 {
   background-image: url('./PreviousButton.png'); 
   background-size: 160%;
   background-position: right;
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-color: purple;
   border-color: transparent;
   /* background-color: aqua; */
 }
@@ -111,8 +113,8 @@ h1, h2 {
 margin-top: 10vw;
 padding: 20px;
   color: black;
-  /* background: lightsalmon; */
-  background-color: transparent;
+  background-color: lightsalmon;
+  /* background-color: transparent; */
   font-weight: bold;
   text-align: center;
 }
@@ -123,11 +125,12 @@ padding: 20px;
   max-width: 400px;
   height: auto;
   justify-content: left;
+  background-color: grey;
 }
 
 .output-container {
   display: flex;
-  /* background-color: darkgreen; */
+  background-color: darkgreen;
   flex-wrap: wrap;
   margin-right: 17vw;
   margin-top: -2vw;
@@ -135,7 +138,7 @@ padding: 20px;
 }
 
 .sub-container, .sub-container2 {
-  /* background-color: greenyellow; */
+  background-color: greenyellow;
   flex: 1 1 45%;
   width: 100%;
   max-width: 500px;
@@ -147,7 +150,7 @@ padding: 20px;
 
 .sub-container3 {
   display: flex;
-  /* background-color: greenyellow; */
+  background-color: greenyellow;
   flex-basis: 100%;
   width: 100%;
   max-width: 1000px;

@@ -209,6 +209,11 @@ const ModLocation: React.FC = () => {
           {message && <p className="error-message">{message}</p>}
           <button type="submit">Find your venue!</button>
         </form>
+        <div>
+          * Due to limitations in mapping of buildings due to time constraint,
+          please only choose modules with lessons in COM1
+        </div>
+        <div>for example: CS1010, CS1231, CS2040</div>
       </div>
     </div>
   );
