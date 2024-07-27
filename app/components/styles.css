@@ -3,7 +3,6 @@
 }
 
 .form {
-    /* background-color: #f0ad4e; */
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 10px;

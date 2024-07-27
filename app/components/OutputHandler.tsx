@@ -25,14 +25,12 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
 
   return (
     <div>
-      {/* <img src="./images/Basement_C1_Right.JPG"></img> */}
       <div className="output-container">
         <div className="sub-container">
           <p className="text-output">{description[currentIndex]}</p>
         </div>
         <div className="sub-container2">
           <img
-            // src={imageUrls[currentIndex]}
             src={`images/${imageUrls[currentIndex]}`}
             alt={"error, image could not load"}
             className="image-output"

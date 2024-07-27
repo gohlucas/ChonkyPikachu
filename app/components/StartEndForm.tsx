@@ -113,7 +113,6 @@ const StartEndForm: React.FC = () => {
       <div>
         <form onSubmit={handleSubmit} className="form">
           <div className="container">
-            {/* <div> */}
             <label className="labelGrp">Start Room:</label>
             <select
               value={startRoom}
@@ -130,9 +129,6 @@ const StartEndForm: React.FC = () => {
                 </option>
               ))}
             </select>
-
-            {/* </div> */}
-            {/* <div> */}
             <label className="labelGrp">End Room:</label>
             <select
               value={endRoom}
@@ -149,13 +145,11 @@ const StartEndForm: React.FC = () => {
                 </option>
               ))}
             </select>
-
-            {/* </div> */}
           </div>
-          {message && <p>{message}</p>}
-          <br></br>
+
           <button type="submit">Navigate!</button>
         </form>
+        {message && <p>{message}</p>}
         <button onClick={() => router.back()}>Back</button>
       </div>
     </div>

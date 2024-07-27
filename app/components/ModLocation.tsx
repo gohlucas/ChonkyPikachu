@@ -116,7 +116,6 @@ const ModLocation: React.FC = () => {
       const response = await fetchResults(chosenMod, acadYear, chosenSem);
       const data = await response.json();
       if (!data || data.length === 0) {
-        // TO CHECK WHAT THIS DOES AGAIN CUZ IDT I SAW THE MESSAGE DISPLAYING
         setMessage(
           "Please Select another Module, no venue for this Module found"
         );
