@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./submitbutton.css";
+import Link from "next/link";
 
 // declare type of variables
 interface OutputProps {
@@ -24,7 +25,8 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
   };
 
   return (
-    <div>
+    <div className="container">
+      {/* <div> */}
       <div className="output-container">
         <div className="sub-container">
           <p className="text-output">{description[currentIndex]}</p>
@@ -38,17 +40,23 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
         </div>
 
         <div className="sub-container3">
+          <button onClick={prevImage} disabled={currentIndex === 0}>
+            Previous
+          </button>
+        </div>
+        <div className="sub-container4">
           <button
-            className="prev-item"
-            onClick={prevImage}
-            disabled={currentIndex === 0}
-          ></button>
-          <button
-            className="next-item"
             onClick={nextImage}
             disabled={currentIndex === imageUrls.length - 1}
-          ></button>
+          >
+            Next
+          </button>
         </div>
+        <Link href="/intro">
+          <button className="back">
+            Click Here to head back to Start Page
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -146,7 +146,6 @@ const StartEndForm: React.FC = () => {
               ))}
             </select>
           </div>
-
           <button type="submit">Navigate!</button>
         </form>
         {message && <p>{message}</p>}

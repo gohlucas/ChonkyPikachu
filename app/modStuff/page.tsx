@@ -10,9 +10,9 @@ const Home: React.FC = () => {
       <header>
         <div>
           <ModLocation />
-          {/* <Link href="/intro">
+          <Link href="/intro">
             <button> Click Here to head back to Start Page</button>
-          </Link> */}
+          </Link>
         </div>
       </header>
     </main>

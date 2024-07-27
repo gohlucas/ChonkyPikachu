@@ -4,9 +4,9 @@
 
 .form {
     display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 10px;
-    column-width: 10px;
+    grid-template-columns: 1fr 49fr;
+    column-gap: 0px;
+    width: 100%;
 }
 
 .labelGrp {
@@ -15,4 +15,19 @@
 
 .selectGrp {
     grid-column: 2;
+}
+
+@media (max-width: 1200px) {
+    .form {
+        grid-template-columns: 1fr 49fr; 
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr; 
+    }
+    .labelGrp, .selectGrp {
+        grid-column: span 1;
+    }
 }

@@ -3,109 +3,13 @@
   --vh: 100%;
 }
 
-.button {
-  background-image: url('./PreSubmitButton.png'); 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  background-size: cover;
-  color: transparent; 
-  padding: 0; 
-  border: none;
-  width: 200px;
-  height: 200px;
-  outline: none;
-  cursor: pointer; 
-  border-radius: 1px; 
-  transition: background-image 0.3s; 
-}
-
-.button:hover {
-  background-image: url('./PostSubmitButton.png'); 
-}
-
-.center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 125px; 
-  text-align: center;
-}
-  
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-  
-.label-container {
-  margin-top: 1rem;
-  margin-bottom: 1rem; 
-}
-  
-label, select {
-  margin: 0; 
-  padding: 0.2rem 0; 
-}
-  
-h1, h2 {
-  margin: 0.5rem 0; 
-}
-
-.page-link {
-  display: inline-block;
-  width: 200px; 
-  height: 200px; 
-  background-image: url('./PreBackButton.png'); 
-  background-size: 160%;
-  background-position: center;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  margin-top: 50px; 
-  margin-bottom: 50px;
-  border: none;
-}
-  
-.page-link:hover {
-  background-image: url('./PostBackButton.png'); 
-  background-repeat: no-repeat;
-}
-
-.error-message {
+/* .error-message {
   color: black;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: bold;
   text-align: center;
-}
-
-.next-item {
-  margin-left: 4vw;
-  width: 40vw; 
-  max-width: 100%;
-  height: 13vw;
-  max-height: 80%;  
-  background-image: url('./NextButton.png'); 
-  background-size: 160%;
-  background-position: right;
-  background-color: transparent;
-  /* background-color: purple; */
-  border-color: transparent;
-}
-
-.prev-item {
-  width: 40vw; 
-  max-width: 100%;
-  height: 13vw;
-  max-height: 80%; 
-  background-image: url('./PreviousButton.png'); 
-  background-size: 160%;
-  background-position: right;
-  /* background-color: transparent; */
-  /* background-color: purple; */
-  border-color: transparent;
-}
+} */
 
 .text-output {
 margin-top: 10vw;
@@ -122,38 +26,94 @@ padding: 20px;
   height: 100%;
   max-height: 400px;
   width: auto;
-  justify-content: left;
+  justify-content: center;
   /* background-color: grey; */
 }
 
-.output-container {
+.container {
+  /* background-color: blue; */
   display: flex;
-  /* background-color: darkgreen; */
-  flex-wrap: wrap;
-  margin-right: 17vw;
-  margin-top: -2vw;
-  justify-content: space-around;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin-left: 25vh;
+  margin-top: -25vh;
+}
+
+.output-container {
+  /* background-color: grey; */
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */ 
+  grid-template-columns: 1fr 1fr;  
+  grid-template-rows: auto auto; 
+  width: 100%; 
+  max-width: 1000px; 
+  box-sizing: border-box;
 }
 
 .sub-container, .sub-container2 {
   /* background-color: greenyellow; */
-  flex: 1 1 45%;
-  width: 100%;
+  width: 100%; 
   max-width: 500px;
-  height: auto;
-  margin:10px;
-  margin-left: 2vw;
   box-sizing: border-box;
 }
 
-.sub-container3 {
+.sub-container3, .sub-container4 {
   display: flex;
-  /* background-color: greenyellow; */
-  flex-basis: 100%;
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  margin:10px;
-  margin-left: 2vw;
+  /* background-color: purple; */
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  max-width: 500px;
   box-sizing: border-box;
 }
+
+.back {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* .center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 125px; 
+  text-align: center;
+} */
+  
+/* .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+.label-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+}
+  
+label, select {
+  margin: 0; 
+  padding: 0.2rem 0; 
+} */
+  
+/* 
+.page-link {
+  display: inline-block;
+  width: 200px; 
+  height: 200px; 
+  background-size: 160%;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  margin-top: 50px; 
+  margin-bottom: 50px;
+  border: none;
+}
+  
+.page-link:hover {
+  background-repeat: no-repeat;
+} */

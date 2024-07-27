@@ -13,8 +13,8 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="page-container">
-      <div className="page-form">
+    <div>
+      <div>
         <StartEndForm />
       </div>
     </div>
