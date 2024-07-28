@@ -1,18 +1,21 @@
+"use client";
 import React from "react";
-import Link from "next/link";
 import ModLocation from "../components/ModLocation";
-// import "./IntroPage.css";
 
 //Functional component on homepage to bring users to the next page
 const Home: React.FC = () => {
+  const handleRefresh = () => {
+    window.location.href = "/intro";
+  };
+
   return (
     <main>
       <header>
         <div>
           <ModLocation />
-          <Link href="/intro">
-            <button> Click Here to head back to Start Page</button>
-          </Link>
+          <button onClick={handleRefresh}>
+            Click here to head back to Start Page
+          </button>
         </div>
       </header>
     </main>

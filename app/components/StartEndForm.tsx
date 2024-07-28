@@ -107,7 +107,6 @@ const StartEndForm: React.FC = () => {
 
   return (
     // Listens for user activity and changes the room value accordingly
-    // <div className="center-container">
     <div>
       <h1>Select Start and End Rooms</h1>
       <div>
