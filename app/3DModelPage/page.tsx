@@ -1,25 +1,30 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as THREE from 'three';
-import './styles.css'; // Import your custom CSS file
+import React, { useEffect, useState } from "react";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import * as THREE from "three";
+import "./styles.css"; // Import your custom CSS file
 
 const ModelPage: React.FC = () => {
-  const [selectedModel, setSelectedModel] = useState('/SoC_COM_1_Basement.glb'); // Default is basement
+  const [selectedModel, setSelectedModel] = useState("/SoC_COM_1_Basement.glb"); // Default is basement
 
   useEffect(() => {
     // Scene creation for three.js
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // 75 Degrees angle
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    ); // 75 Degrees angle
     const renderer = new THREE.WebGLRenderer({ antialias: true });
 
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.domElement.style.position = 'absolute'; // Make the canvas fill the screen
-    renderer.domElement.style.top = '0';
-    renderer.domElement.style.left = '0';
-    renderer.domElement.style.zIndex = '-1'; // Place the canvas behind the dropdown
+    renderer.domElement.style.position = "absolute"; // Make the canvas fill the screen
+    renderer.domElement.style.top = "0";
+    renderer.domElement.style.left = "0";
+    renderer.domElement.style.zIndex = "-1"; // Place the canvas behind the dropdown
     document.body.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -71,23 +76,34 @@ const ModelPage: React.FC = () => {
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    window.addEventListener('resize', handleResize); // Resize when window is changed
+    window.addEventListener("resize", handleResize); // Resize when window is changed
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       document.body.removeChild(renderer.domElement);
     };
   }, [selectedModel]);
+
+  const handleRefresh = () => {
+    window.location.href = "/intro";
+  };
 
   // Webpage with selection
   return (
     <div className="container-center">
       <label className="label-large">Select a floor:</label>
-      <select className="select-large" onChange={(e) => setSelectedModel(e.target.value)} value={selectedModel}>
+      <select
+        className="select-large"
+        onChange={(e) => setSelectedModel(e.target.value)}
+        value={selectedModel}
+      >
         <option value="/SoC_COM_1_Basement.glb">Basement</option>
         <option value="/SoC_COM_1_Level_1.glb">First Floor</option>
         <option value="/SoC_COM_1_Level_2.glb">Second Floor</option>
       </select>
+      <button onClick={handleRefresh}>
+        Click here to head back to Start Page
+      </button>
     </div>
   );
 };

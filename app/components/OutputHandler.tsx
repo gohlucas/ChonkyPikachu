@@ -54,7 +54,6 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
             Next
           </button>
         </div>
-
         <button onClick={handleRefresh}>
           Click here to head back to Start Page
         </button>
