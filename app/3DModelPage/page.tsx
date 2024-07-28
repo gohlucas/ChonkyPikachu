@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as THREE from "three";
-import "./styles.css"; // Import your custom CSS file
+import "./styles.css"; // Import custom CSS file
 
 const ModelPage: React.FC = () => {
   const [selectedModel, setSelectedModel] = useState("/SoC_COM_1_Basement.glb"); // Default is basement

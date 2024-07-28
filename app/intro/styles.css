@@ -1,9 +1,9 @@
 .custom-color {
-    color: #000000; /* Custom color */
+    color: #000000; 
   }
   
   .custom-font {
-    font-family: 'Helvetica', sans-serif; /* Custom font */
+    font-family: 'Helvetica', sans-serif; 
   }
   
   .background {
@@ -19,7 +19,7 @@
   }
   
   .button-text-color {
-    color: #fff; /* White text for buttons */
+    color: #fff; 
   }
   
   .btn-custom {
