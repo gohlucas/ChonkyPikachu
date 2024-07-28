@@ -13,6 +13,10 @@ interface OutputProps {
 const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const handleRefresh = () => {
+    window.location.href = "/intro";
+  };
+
   const nextImage = () => {
     setCurrentIndex((previousIndex) => (previousIndex + 1) % imageUrls.length);
   };
@@ -26,7 +30,6 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
 
   return (
     <div className="container">
-      {/* <div> */}
       <div className="output-container">
         <div className="sub-container">
           <p className="text-output">{description[currentIndex]}</p>
@@ -52,11 +55,10 @@ const OutputHandler: React.FC<OutputProps> = ({ imageUrls, description }) => {
             Next
           </button>
         </div>
-        <Link href="/intro">
-          <button className="back">
-            Click Here to head back to Start Page
-          </button>
-        </Link>
+
+        <button onClick={handleRefresh}>
+          Click here to head back to Start Page
+        </button>
       </div>
     </div>
   );
