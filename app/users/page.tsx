@@ -3,7 +3,7 @@ import React from "react";
 import StartEndForm from "../components/StartEndForm";
 import "./mainpage.css"; //Styling
 import { useRouter } from "next/navigation";
-import "./mainpage.css"; //Styling
+
 
 const HomePage: React.FC = () => {
   const router = useRouter();

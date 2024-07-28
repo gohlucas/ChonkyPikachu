@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head"; // Import Head from Next.js to include external resources
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import "./styles.css"; // Import your custom CSS file
+import "./styles.css"; // Import custom CSS file
 
 const Home: React.FC = () => {
   return (
