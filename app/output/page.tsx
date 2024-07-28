@@ -23,10 +23,8 @@ const Output: React.FC = () => {
   return (
     <main className="output-main">
       <div className="output-content-step">
-        {/* Display the navigation results or any other information here */}
         <div className="output-content-step">
           <OutputHandler imageUrls={img} description={path} />
-          {/* <p>Path: {path.join(", ")}</p> */}
         </div>
       </div>
     </main>

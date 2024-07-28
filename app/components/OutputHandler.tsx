@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./submitbutton.css";
-import Link from "next/link";
 
 // declare type of variables
 interface OutputProps {

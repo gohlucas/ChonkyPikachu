@@ -15,7 +15,6 @@
 margin-top: 10vw;
 padding: 20px;
   color: black;
-  /* background-color: lightsalmon; */
   /* background-color: transparent; */
   font-weight: bold;
   text-align: center;
@@ -23,15 +22,15 @@ padding: 20px;
 
 .image-output {
   display: flex;
-  height: 100%;
-  max-height: 400px;
-  width: auto;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   justify-content: center;
-  /* background-color: grey; */
 }
 
 .container {
-  /* background-color: blue; */
+  border: 1px solid #000;
+  background-color: #f0ad4e;
   display: flex;
   justify-content: center; 
   align-items: center; 
@@ -39,13 +38,11 @@ padding: 20px;
   min-height: 100vh;
   box-sizing: border-box;
   margin-left: 25vh;
-  margin-top: -25vh;
+  margin-top: -18vh;
 }
 
 .output-container {
-  /* background-color: grey; */
   display: grid;
-  /* grid-template-columns: repeat(2, 1fr); */ 
   grid-template-columns: 1fr 1fr;  
   grid-template-rows: auto auto; 
   width: 100%; 
@@ -56,6 +53,7 @@ padding: 20px;
 .sub-container, .sub-container2 {
   /* background-color: greenyellow; */
   width: 100%; 
+  border: 1px solid #000;
   max-width: 500px;
   box-sizing: border-box;
 }
@@ -74,46 +72,3 @@ padding: 20px;
   display: flex;
   justify-content: flex-start;
 }
-
-/* .center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 125px; 
-  text-align: center;
-} */
-  
-/* .form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-  
-.label-container {
-  margin-top: 1rem;
-  margin-bottom: 1rem; 
-}
-  
-label, select {
-  margin: 0; 
-  padding: 0.2rem 0; 
-} */
-  
-/* 
-.page-link {
-  display: inline-block;
-  width: 200px; 
-  height: 200px; 
-  background-size: 160%;
-  background-position: center;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  margin-top: 50px; 
-  margin-bottom: 50px;
-  border: none;
-}
-  
-.page-link:hover {
-  background-repeat: no-repeat;
-} */
